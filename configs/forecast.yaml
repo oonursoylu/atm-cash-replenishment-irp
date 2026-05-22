@@ -1,0 +1,38 @@
+# Forecast pipeline configuration — XGBoost v8.
+# Optuna search space lives in train_models.py (tightly coupled to API).
+
+data:
+  excel_path: "data/2024-12-09_ATM_Branch_Data.xlsx"
+  sheet_name: "ATM"
+
+split:
+  val_start:  "2007-10-01"
+  test_start: "2007-12-08"
+
+quantiles:
+  alpha_point:  0.55
+  alpha_safety: 0.95
+
+sample_weights:
+  clip_low:  0.5
+  clip_high: 2.0
+
+zero_handling:
+  consecutive_zero_threshold: 14
+  drop_isolated_zeros: true
+
+optuna:
+  trials:       50
+  trials_quick: 10
+
+bias_correction:
+  window: 14
+  shrinkage: 0.7
+  cold_start_min_obs: 3
+
+paths:
+  models_dir:      "models"
+  predictions_dir: "predictions"
+  logs_dir:        "logs"
+
+seed: 42

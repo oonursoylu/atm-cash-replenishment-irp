@@ -1,0 +1,110 @@
+[
+  {
+    "stockout_penalty": 3000,
+    "safety_floor_pen": 0.01,
+    "total_cost": 375929.95,
+    "stockouts": 104,
+    "dispatches": 31,
+    "travel_cost": 1709.51,
+    "dispatch_cost": 9300.0,
+    "drop_fees": 18650.0,
+    "holding_cost": 34270.44,
+    "stockout_cost": 312000.0
+  },
+  {
+    "stockout_penalty": 3000,
+    "safety_floor_pen": 0.1,
+    "total_cost": 368683.77,
+    "stockouts": 101,
+    "dispatches": 35,
+    "travel_cost": 1918.97,
+    "dispatch_cost": 10500.0,
+    "drop_fees": 19300.0,
+    "holding_cost": 33964.8,
+    "stockout_cost": 303000.0
+  },
+  {
+    "stockout_penalty": 3000,
+    "safety_floor_pen": 1.0,
+    "total_cost": 353242.65,
+    "stockouts": 96,
+    "dispatches": 33,
+    "travel_cost": 1824.06,
+    "dispatch_cost": 9900.0,
+    "drop_fees": 19200.0,
+    "holding_cost": 34318.59,
+    "stockout_cost": 288000.0
+  },
+  {
+    "stockout_penalty": 5000,
+    "safety_floor_pen": 0.01,
+    "total_cost": 425574.97,
+    "stockouts": 72,
+    "dispatches": 31,
+    "travel_cost": 1727.55,
+    "dispatch_cost": 9300.0,
+    "drop_fees": 18150.0,
+    "holding_cost": 36397.43,
+    "stockout_cost": 360000.0
+  },
+  {
+    "stockout_penalty": 5000,
+    "safety_floor_pen": 0.1,
+    "total_cost": 504794.15,
+    "stockouts": 88,
+    "dispatches": 32,
+    "travel_cost": 1736.86,
+    "dispatch_cost": 9600.0,
+    "drop_fees": 19250.0,
+    "holding_cost": 34207.29,
+    "stockout_cost": 440000.0
+  },
+  {
+    "stockout_penalty": 5000,
+    "safety_floor_pen": 1.0,
+    "total_cost": 560168.11,
+    "stockouts": 99,
+    "dispatches": 34,
+    "travel_cost": 1812.39,
+    "dispatch_cost": 10200.0,
+    "drop_fees": 19150.0,
+    "holding_cost": 34005.73,
+    "stockout_cost": 495000.0
+  },
+  {
+    "stockout_penalty": 8000,
+    "safety_floor_pen": 0.01,
+    "total_cost": 720766.66,
+    "stockouts": 82,
+    "dispatches": 34,
+    "travel_cost": 1859.09,
+    "dispatch_cost": 10200.0,
+    "drop_fees": 18500.0,
+    "holding_cost": 34207.57,
+    "stockout_cost": 656000.0
+  },
+  {
+    "stockout_penalty": 8000,
+    "safety_floor_pen": 0.1,
+    "total_cost": 802112.42,
+    "stockouts": 92,
+    "dispatches": 34,
+    "travel_cost": 1883.25,
+    "dispatch_cost": 10200.0,
+    "drop_fees": 20100.0,
+    "holding_cost": 33929.17,
+    "stockout_cost": 736000.0
+  },
+  {
+    "stockout_penalty": 8000,
+    "safety_floor_pen": 1.0,
+    "total_cost": 880993.04,
+    "stockouts": 102,
+    "dispatches": 35,
+    "travel_cost": 1990.64,
+    "dispatch_cost": 10500.0,
+    "drop_fees": 20250.0,
+    "holding_cost": 32252.4,
+    "stockout_cost": 816000.0
+  }
+]

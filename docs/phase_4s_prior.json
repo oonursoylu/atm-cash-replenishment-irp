@@ -1,0 +1,14 @@
+[
+  {
+    "seed": 42,
+    "total_cost": 268058.56,
+    "stockouts": 66,
+    "dispatches": 37,
+    "travel_cost": 1880.33,
+    "dispatch_cost": 11100.0,
+    "drop_fees": 19150.0,
+    "holding_cost": 37928.23,
+    "stockout_cost": 198000.0,
+    "_source": "Phase 4.A (3000, 0.1) cell at alpha=0.95, hetero+nv=3, symmetric OSM, low=0.30. Verified reproducible: Phase 4.I low=0.30 cell independently produced identical stockout count (66) under same SEED=42. Phase 4.S extends this with 4 alternative seeds to characterise across-seed variance."
+  }
+]

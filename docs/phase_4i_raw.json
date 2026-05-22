@@ -1,0 +1,58 @@
+[
+  {
+    "initial_inventory_low_pct": 0.3,
+    "total_cost": 268058.56,
+    "stockouts": 66,
+    "dispatches": 37,
+    "travel_cost": 1880.33,
+    "dispatch_cost": 11100.0,
+    "drop_fees": 19150.0,
+    "holding_cost": 37928.23,
+    "stockout_cost": 198000.0,
+    "_source": "phase_4a_raw.json cell (3000, 0.1) at alpha_safety=0.95; identical baseline config"
+  },
+  {
+    "initial_inventory_low_pct": 0.1,
+    "total_cost": 303247.06,
+    "stockouts": 79,
+    "dispatches": 37,
+    "travel_cost": 1985.97,
+    "dispatch_cost": 11100.0,
+    "drop_fees": 20150.0,
+    "holding_cost": 33011.09,
+    "stockout_cost": 237000.0
+  },
+  {
+    "initial_inventory_low_pct": 0.2,
+    "total_cost": 304287.43,
+    "stockouts": 79,
+    "dispatches": 37,
+    "travel_cost": 1835.79,
+    "dispatch_cost": 11100.0,
+    "drop_fees": 19400.0,
+    "holding_cost": 34951.64,
+    "stockout_cost": 237000.0
+  },
+  {
+    "initial_inventory_low_pct": 0.4,
+    "total_cost": 287012.25,
+    "stockouts": 73,
+    "dispatches": 35,
+    "travel_cost": 1703.38,
+    "dispatch_cost": 10500.0,
+    "drop_fees": 17200.0,
+    "holding_cost": 38608.88,
+    "stockout_cost": 219000.0
+  },
+  {
+    "initial_inventory_low_pct": 0.5,
+    "total_cost": 292032.01,
+    "stockouts": 74,
+    "dispatches": 34,
+    "travel_cost": 1743.37,
+    "dispatch_cost": 10200.0,
+    "drop_fees": 17250.0,
+    "holding_cost": 40838.64,
+    "stockout_cost": 222000.0
+  }
+]

@@ -1,0 +1,24 @@
+[
+  {
+    "num_vehicles": 2,
+    "total_cost": 583613.47,
+    "stockouts": 104,
+    "dispatches": 32,
+    "travel_cost": 1753.85,
+    "dispatch_cost": 9600.0,
+    "drop_fees": 18800.0,
+    "holding_cost": 33459.62,
+    "stockout_cost": 520000.0
+  },
+  {
+    "num_vehicles": 3,
+    "total_cost": 526782.91,
+    "stockouts": 93,
+    "dispatches": 31,
+    "travel_cost": 1722.44,
+    "dispatch_cost": 9300.0,
+    "drop_fees": 17600.0,
+    "holding_cost": 33160.47,
+    "stockout_cost": 465000.0
+  }
+]

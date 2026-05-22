@@ -1,0 +1,14 @@
+[
+  {
+    "initial_inventory_low_pct": 0.30,
+    "total_cost": 268058.56,
+    "stockouts": 66,
+    "dispatches": 37,
+    "travel_cost": 1880.33,
+    "dispatch_cost": 11100.0,
+    "drop_fees": 19150.0,
+    "holding_cost": 37928.23,
+    "stockout_cost": 198000.0,
+    "_source": "phase_4a_raw.json cell (3000, 0.1) at alpha_safety=0.95; identical baseline config"
+  }
+]

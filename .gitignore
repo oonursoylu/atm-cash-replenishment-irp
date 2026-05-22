@@ -1,0 +1,65 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual environments
+venv/
+ENV/
+env/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb
+
+# Data & artifacts (keep on disk, not in git)
+data/
+models/*.joblib
+predictions/*.csv
+outputs/*
+!outputs/shap/
+outputs/shap/*
+!outputs/shap/*.png
+!outputs/shap/*.csv
+cache/
+logs/
+
+# Legacy (archive versions, keep v8 baseline and toy data)
+legacy/archive/
+legacy/*.py
+!legacy/atm_xgboost_forecast_v8.py
+!legacy/optimization_phase_toy_data.py
+
+# Internal research notes / working methodology snapshots
+docs/decision_register.md
+docs/methodology_state.md
+docs/baseline_design_spec.md
+docs/phase_4j_v3_results.md
+
+# OS
+.DS_Store
+Thumbs.db

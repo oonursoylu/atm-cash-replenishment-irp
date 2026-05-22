@@ -1,0 +1,15 @@
+{
+  "label": "B2 point-forecast + IRP",
+  "stockouts": 262,
+  "service_level": 0.8842244807777286,
+  "op_cost": 136100.82975026395,
+  "reported_total": 922100.829750264,
+  "dispatches": 83,
+  "travel": 4254.3099999999995,
+  "dispatch_cost": 24900.0,
+  "drop_fees": 52050.0,
+  "holding": 54896.519750263964,
+  "total_deliveries": 89386141.43036196,
+  "n_atm_days": 2263,
+  "elapsed_sec": 18046.71113872528
+}

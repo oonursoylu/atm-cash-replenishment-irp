@@ -1,0 +1,114 @@
+# Optimization configuration for the ATM IRP.
+# Each parameter is anchored to a validated design decision; the rationale here is
+# short — sensitivity-sweep evidence lives in docs/phase_*_raw.json.
+
+
+simulation:
+  # Sensitivity sweeps run at 30 days; final headline run uses 73 (max under 80 CSV
+  # prediction dates minus the 7-day planning horizon).
+  days: 73
+  # Captures one full weekly seasonality cycle (DOW factors).
+  planning_horizon: 7
+
+
+data:
+  # Synthetic generator (false) vs real-data CSV (true).
+  use_real_demand: true
+  # Path resolved relative to project root. Forecast safety quantile alpha = 0.95.
+  real_demand_csv_path: "predictions/test_predictions_p0.55_s0.95.csv"
+  # Operational floor for (atm, day) cells absent from the CSV (zero-filtered
+  # at forecast training time). eps_mean = minimal active demand;
+  # eps_safety = safety floor over eps_mean — keeps a small buffer without
+  # provisioning for noise-equivalent demand.
+  missing_day_eps_mean: 100
+  missing_day_eps_safety: 1000
+
+
+fleet:
+  # The 3rd vehicle is genuinely active under real demand spread and lowers every
+  # operational cost component (travel, dispatch, drops, holding). Decision #6.
+  num_vehicles: 3
+  # Standard CIT armoured-vehicle insurance ceiling.
+  vehicle_capacity: 1_500_000
+  # 4-cassette ATM at avg 50 TL banknote mix. Used in uniform mode only.
+  atm_capacity: 400_000
+  # U(0.30, 0.50) is the bi-criteria optimum on the 1D lower-bound sweep:
+  # V-shape stockout response with minimum at low = 0.30. Decision #10.
+  initial_inventory_low_pct: 0.30
+  initial_inventory_high_pct: 0.50
+  # When true: per-ATM cap from spatial.ATM_TIERS (tertile-based 250/400/500K).
+  # Heterogeneous tiers reflect real CIT cassette configuration. Decision #9.
+  use_heterogeneous_capacity: true
+
+
+costs:
+  # Daily opportunity cost of idle ATM cash; 18% annual / 365 (CBRT rate, study period).
+  holding_per_day: 0.0005
+  # Marginal daily cost of activating one vehicle (fuel, crew premium, daily insurance).
+  dispatch_per_vehicle: 300
+  # Per-stop overhead (security setup, seal break, transaction logging).
+  drop_fee_per_atm: 50
+  # Marginal vehicle operating cost in urban traffic (diesel, tyre, maintenance).
+  travel_per_min: 0.5
+  # Floor on per-visit load to avoid solver scheduling micro-stops with no operational justification.
+  min_load_per_visit: 20_000
+
+
+service_level:
+  # Big-M-style shadow penalty. The 3,000 TL value gives the lowest stockout count
+  # on the 12-cell joint sweep at heterogeneous capacity + 3 vehicles. Higher
+  # values cause maldistribution (over-protecting a few ATMs, starving others).
+  # Decision #1.
+  stockout_penalty: 3000
+  # Per-TL slack on safety floor. The 0.1 value is the bottom of a U-shape on the
+  # sf axis: at 0.001 the constraint is effectively off, at 1.0 it becomes
+  # near-hard and re-introduces maldistribution. Decision #2.
+  safety_floor_pen: 0.1
+  # End-of-horizon hybrid penalty: fixed activation fee deters complete neglect of
+  # an ATM at horizon end; per-TL rate ensures the optimiser minimises shortfall
+  # magnitude. Prevents the finite-horizon solver from draining inventory on
+  # the last day. Not reported in simulation actuals.
+  eoh_fixed_fee: 300
+  eoh_pen_rate: 0.005
+
+
+service_time:
+  # On-site branches typically have dedicated parking, so fixed handling is shorter.
+  onsite_fixed_min: 20
+  # Off-site ATMs incur additional setup overhead.
+  offsite_fixed_min: 25
+  # Cassette swap time scales linearly with load: ~1 min per 20k TL.
+  cassette_coef_per_tl: 0.00005   # 1.0 / 20_000
+  # Standard 8-hour CIT working shift.
+  shift_limit_min: 480
+
+
+travel_matrix:
+  # OSM gives realistic urban routing; haversine is a fallback when osmnx unavailable.
+  use_osm: true
+  osm_place: "Kadikoy, Istanbul, Turkey"
+  osm_network_dist_m: 15_000
+  # Conservative urban average; bounded in code to [5, 80] km/h per OSM speed tags.
+  urban_speed_kmh: 20
+  # Detour factor on haversine distances to approximate road-network length.
+  detour_factor: 1.35
+  # When true (default): OSM Dijkstra forward/backward times are averaged into a
+  # symmetric matrix. When false: raw asymmetric Dijkstra times retained.
+  # Haversine backend is symmetric by construction; flag trivially honoured.
+  # Symmetric is the validated baseline. Decision #15.
+  symmetrize: true
+
+
+solver:
+  # 0.05 keeps daily solves under ~10 min for sensitivity sweeps; final headline
+  # run uses 0.02 to reduce solver-induced noise in the reported numbers.
+  # Decision #16.
+  mip_gap: 0.02
+  # 600s ceiling per daily solve; enough for high-quality solutions on this instance size.
+  time_limit_sec: 600
+  # Lexicographic ordering w[k,t] >= w[k+1,t] cuts symmetry across identical vehicles.
+  use_symmetry_breaking: true
+
+
+reproducibility:
+  seed: 42

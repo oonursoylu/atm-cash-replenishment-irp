@@ -1,0 +1,58 @@
+[
+  {
+    "seed": 42,
+    "total_cost": 268058.56,
+    "stockouts": 66,
+    "dispatches": 37,
+    "travel_cost": 1880.33,
+    "dispatch_cost": 11100.0,
+    "drop_fees": 19150.0,
+    "holding_cost": 37928.23,
+    "stockout_cost": 198000.0,
+    "_source": "Phase 4.A (3000, 0.1) cell at alpha=0.95, hetero+nv=3, symmetric OSM, low=0.30. Verified reproducible: Phase 4.I low=0.30 cell independently produced identical stockout count (66) under same SEED=42. Phase 4.S extends this with 4 alternative seeds to characterise across-seed variance."
+  },
+  {
+    "seed": 7,
+    "total_cost": 292280.3,
+    "stockouts": 75,
+    "dispatches": 34,
+    "travel_cost": 1777.21,
+    "dispatch_cost": 10200.0,
+    "drop_fees": 18300.0,
+    "holding_cost": 37003.08,
+    "stockout_cost": 225000.0
+  },
+  {
+    "seed": 19,
+    "total_cost": 286426.77,
+    "stockouts": 72,
+    "dispatches": 36,
+    "travel_cost": 1870.33,
+    "dispatch_cost": 10800.0,
+    "drop_fees": 19000.0,
+    "holding_cost": 38756.44,
+    "stockout_cost": 216000.0
+  },
+  {
+    "seed": 31,
+    "total_cost": 276161.49,
+    "stockouts": 69,
+    "dispatches": 37,
+    "travel_cost": 1813.0,
+    "dispatch_cost": 11100.0,
+    "drop_fees": 18500.0,
+    "holding_cost": 37748.49,
+    "stockout_cost": 207000.0
+  },
+  {
+    "seed": 53,
+    "total_cost": 248796.08,
+    "stockouts": 60,
+    "dispatches": 34,
+    "travel_cost": 1826.91,
+    "dispatch_cost": 10200.0,
+    "drop_fees": 18850.0,
+    "holding_cost": 37919.17,
+    "stockout_cost": 180000.0
+  }
+]

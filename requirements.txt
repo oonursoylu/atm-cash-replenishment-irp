@@ -1,0 +1,35 @@
+# --- Core runtime dependencies ---
+# Required to run the forecast pipeline (train_models.py) and the IRP
+# rolling-horizon simulation (main.py).
+numpy>=1.24.0
+pandas>=1.5.0
+xgboost>=2.0.0
+optuna>=3.0.0
+joblib>=1.3.0
+pyyaml>=6.0
+openpyxl>=3.10.0
+
+# IBM CPLEX Python API. The solver itself (CPLEX 22.1+) must be installed
+# separately — see README "Prerequisites" section for academic / community
+# / Docker options.
+docplex>=2.24.0
+
+# --- Optional: visualisation ---
+# folium produces the interactive HTML map (outputs/istanbul_atm_simulation_map.html).
+# osmnx + networkx pull the OSM driving network for realistic travel times
+# (configs/optimize.yaml: travel_matrix.use_osm). When unavailable, src/data/travel.py
+# falls back to a haversine + detour-factor distance model.
+folium>=0.14.0
+osmnx>=1.6.0       # optional, OSM travel-matrix backend
+networkx>=3.0      # optional, transitive dependency of osmnx
+
+# --- Optional: interpretability ---
+# Used only by scripts/run_shap_v8.py to compute TreeSHAP values and produce
+# the figures in outputs/shap/. Not required for training or simulation.
+# shap>=0.44.0
+# matplotlib>=3.7.0
+
+# --- Dev / testing ---
+# Used by tests/test_phase_2*.py. Integration tests skip cleanly if CPLEX is
+# unavailable, so pytest itself is the only hard dev dependency.
+# pytest>=7.0.0

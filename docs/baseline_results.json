@@ -1,0 +1,1382 @@
+{
+  "config": {
+    "simulation_days": 73,
+    "seed": 42,
+    "num_vehicles": 3,
+    "n_atm_days": 2263
+  },
+  "B0": {
+    "summary": {
+      "stockouts": 52,
+      "service_level": 0.9770216526734423,
+      "op_cost": 229354.5182654361,
+      "reported_total": 385354.5182654361,
+      "dispatches": 103,
+      "travel": 3184.1299999999983,
+      "dispatch_cost": 30900.0,
+      "drop_fees": 21650.0,
+      "holding": 173620.3882654361,
+      "total_deliveries": 99380119.41383056,
+      "label": "B0 (static s,S)"
+    },
+    "phase_breakdown": {
+      "cold_start": 0,
+      "catch_up": 25,
+      "steady_state": 27
+    },
+    "daily_log": [
+      {
+        "day": 1,
+        "stockouts": 0,
+        "dispatches": 0,
+        "stops": 0,
+        "delivered": 0.0,
+        "travel": 0.0,
+        "holding": 1861.9486611700722
+      },
+      {
+        "day": 2,
+        "stockouts": 0,
+        "dispatches": 2,
+        "stops": 7,
+        "delivered": 1940547.7736820958,
+        "travel": 59.019999999999996,
+        "holding": 2632.7475480111207
+      },
+      {
+        "day": 3,
+        "stockouts": 0,
+        "dispatches": 1,
+        "stops": 4,
+        "delivered": 1069571.1439826211,
+        "travel": 42.05,
+        "holding": 2722.315620002431
+      },
+      {
+        "day": 4,
+        "stockouts": 0,
+        "dispatches": 1,
+        "stops": 6,
+        "delivered": 1386833.1940597156,
+        "travel": 47.265,
+        "holding": 3082.0847170322886
+      },
+      {
+        "day": 5,
+        "stockouts": 0,
+        "dispatches": 1,
+        "stops": 2,
+        "delivered": 394318.0338295289,
+        "travel": 23.79,
+        "holding": 2968.3537339470536
+      },
+      {
+        "day": 6,
+        "stockouts": 0,
+        "dispatches": 1,
+        "stops": 2,
+        "delivered": 502071.6686409211,
+        "travel": 20.259999999999998,
+        "holding": 2941.809568267514
+      },
+      {
+        "day": 7,
+        "stockouts": 0,
+        "dispatches": 1,
+        "stops": 2,
+        "delivered": 363780.75374508585,
+        "travel": 16.625,
+        "holding": 2166.8599451400564
+      },
+      {
+        "day": 8,
+        "stockouts": 2,
+        "dispatches": 2,
+        "stops": 8,
+        "delivered": 1799858.8102644114,
+        "travel": 64.905,
+        "holding": 1711.441343999861
+      },
+      {
+        "day": 9,
+        "stockouts": 0,
+        "dispatches": 3,
+        "stops": 11,
+        "delivered": 3164401.012544803,
+        "travel": 70.22,
+        "holding": 2478.0968502722626
+      },
+      {
+        "day": 10,
+        "stockouts": 1,
+        "dispatches": 2,
+        "stops": 11,
+        "delivered": 1917011.5529568854,
+        "travel": 76.155,
+        "holding": 1582.0445177763468
+      },
+      {
+        "day": 11,
+        "stockouts": 13,
+        "dispatches": 3,
+        "stops": 14,
+        "delivered": 3498178.9170671147,
+        "travel": 89.845,
+        "holding": 931.0254527802231
+      },
+      {
+        "day": 12,
+        "stockouts": 9,
+        "dispatches": 3,
+        "stops": 21,
+        "delivered": 4413348.270196563,
+        "travel": 115.175,
+        "holding": 1145.6555115367148
+      },
+      {
+        "day": 13,
+        "stockouts": 0,
+        "dispatches": 3,
+        "stops": 18,
+        "delivered": 4196588.152683579,
+        "travel": 87.49000000000001,
+        "holding": 2912.549587878505
+      },
+      {
+        "day": 14,
+        "stockouts": 0,
+        "dispatches": 1,
+        "stops": 5,
+        "delivered": 1037875.0,
+        "travel": 48.720000000000006,
+        "holding": 3130.387087878504
+      },
+      {
+        "day": 15,
+        "stockouts": 0,
+        "dispatches": 1,
+        "stops": 4,
+        "delivered": 931900.0,
+        "travel": 45.394999999999996,
+        "holding": 3288.104587878504
+      },
+      {
+        "day": 16,
+        "stockouts": 0,
+        "dispatches": 0,
+        "stops": 0,
+        "delivered": 0.0,
+        "travel": 0.0,
+        "holding": 3065.3470878785047
+      },
+      {
+        "day": 17,
+        "stockouts": 0,
+        "dispatches": 1,
+        "stops": 2,
+        "delivered": 372430.0,
+        "travel": 23.119999999999997,
+        "holding": 2221.549587878504
+      },
+      {
+        "day": 18,
+        "stockouts": 0,
+        "dispatches": 1,
+        "stops": 5,
+        "delivered": 1366475.0,
+        "travel": 22.91,
+        "holding": 2247.137087878504
+      },
+      {
+        "day": 19,
+        "stockouts": 0,
+        "dispatches": 2,
+        "stops": 7,
+        "delivered": 1511640.0,
+        "travel": 54.43,
+        "holding": 2515.484587878504
+      },
+      {
+        "day": 20,
+        "stockouts": 0,
+        "dispatches": 1,
+        "stops": 6,
+        "delivered": 1102430.0,
+        "travel": 45.165000000000006,
+        "holding": 2702.694587878505
+      },
+      {
+        "day": 21,
+        "stockouts": 0,
+        "dispatches": 1,
+        "stops": 3,
+        "delivered": 650085.0,
+        "travel": 28.725,
+        "holding": 2678.769587878505
+      },
+      {
+        "day": 22,
+        "stockouts": 0,
+        "dispatches": 1,
+        "stops": 1,
+        "delivered": 107610.0,
+        "travel": 16.21,
+        "holding": 2479.9570878785044
+      },
+      {
+        "day": 23,
+        "stockouts": 0,
+        "dispatches": 1,
+        "stops": 4,
+        "delivered": 511700.0,
+        "travel": 28.81,
+        "holding": 2596.367087878504
+      },
+      {
+        "day": 24,
+        "stockouts": 0,
+        "dispatches": 1,
+        "stops": 1,
+        "delivered": 264730.0,
+        "travel": 15.2,
+        "holding": 2378.609587878504
+      },
+      {
+        "day": 25,
+        "stockouts": 0,
+        "dispatches": 1,
+        "stops": 3,
+        "delivered": 596960.0,
+        "travel": 32.31,
+        "holding": 2182.557087878505
+      },
+      {
+        "day": 26,
+        "stockouts": 0,
+        "dispatches": 2,
+        "stops": 7,
+        "delivered": 1916295.0,
+        "travel": 48.885,
+        "holding": 2383.6145878785046
+      },
+      {
+        "day": 27,
+        "stockouts": 0,
+        "dispatches": 1,
+        "stops": 5,
+        "delivered": 1152110.0,
+        "travel": 37.599999999999994,
+        "holding": 2156.2545878785045
+      },
+      {
+        "day": 28,
+        "stockouts": 2,
+        "dispatches": 2,
+        "stops": 8,
+        "delivered": 1508300.0,
+        "travel": 55.150000000000006,
+        "holding": 1911.0895878785045
+      },
+      {
+        "day": 29,
+        "stockouts": 2,
+        "dispatches": 2,
+        "stops": 10,
+        "delivered": 2491990.0,
+        "travel": 85.35000000000001,
+        "holding": 1943.3670878785044
+      },
+      {
+        "day": 30,
+        "stockouts": 0,
+        "dispatches": 2,
+        "stops": 9,
+        "delivered": 2623660.0,
+        "travel": 58.08,
+        "holding": 3026.364587878504
+      },
+      {
+        "day": 31,
+        "stockouts": 1,
+        "dispatches": 0,
+        "stops": 0,
+        "delivered": 0.0,
+        "travel": 0.0,
+        "holding": 1755.1739427172142
+      },
+      {
+        "day": 32,
+        "stockouts": 0,
+        "dispatches": 3,
+        "stops": 15,
+        "delivered": 3144041.2903225804,
+        "travel": 89.195,
+        "holding": 2738.8945878785034
+      },
+      {
+        "day": 33,
+        "stockouts": 0,
+        "dispatches": 1,
+        "stops": 3,
+        "delivered": 833500.0,
+        "travel": 25.25,
+        "holding": 2757.829587878504
+      },
+      {
+        "day": 34,
+        "stockouts": 0,
+        "dispatches": 1,
+        "stops": 4,
+        "delivered": 1103405.0,
+        "travel": 39.95,
+        "holding": 2954.2420878785038
+      },
+      {
+        "day": 35,
+        "stockouts": 0,
+        "dispatches": 1,
+        "stops": 5,
+        "delivered": 754940.0,
+        "travel": 39.14,
+        "holding": 3021.427087878504
+      },
+      {
+        "day": 36,
+        "stockouts": 0,
+        "dispatches": 1,
+        "stops": 1,
+        "delivered": 268650.0,
+        "travel": 18.79,
+        "holding": 2949.374587878504
+      },
+      {
+        "day": 37,
+        "stockouts": 0,
+        "dispatches": 1,
+        "stops": 1,
+        "delivered": 233380.0,
+        "travel": 15.2,
+        "holding": 2943.717087878504
+      },
+      {
+        "day": 38,
+        "stockouts": 0,
+        "dispatches": 1,
+        "stops": 1,
+        "delivered": 140090.0,
+        "travel": 19.62,
+        "holding": 2709.8520878785052
+      },
+      {
+        "day": 39,
+        "stockouts": 0,
+        "dispatches": 1,
+        "stops": 2,
+        "delivered": 278360.0,
+        "travel": 24.31,
+        "holding": 2407.064587878504
+      },
+      {
+        "day": 40,
+        "stockouts": 0,
+        "dispatches": 1,
+        "stops": 2,
+        "delivered": 580095.0,
+        "travel": 23.505,
+        "holding": 2339.559587878504
+      },
+      {
+        "day": 41,
+        "stockouts": 0,
+        "dispatches": 1,
+        "stops": 6,
+        "delivered": 1363135.0,
+        "travel": 29.52,
+        "holding": 1817.1970878785046
+      },
+      {
+        "day": 42,
+        "stockouts": 0,
+        "dispatches": 2,
+        "stops": 10,
+        "delivered": 2244935.0,
+        "travel": 72.435,
+        "holding": 1809.4670878785041
+      },
+      {
+        "day": 43,
+        "stockouts": 0,
+        "dispatches": 3,
+        "stops": 14,
+        "delivered": 3063025.0,
+        "travel": 99.60499999999999,
+        "holding": 2516.104587878505
+      },
+      {
+        "day": 44,
+        "stockouts": 0,
+        "dispatches": 1,
+        "stops": 4,
+        "delivered": 1235310.0,
+        "travel": 26.105,
+        "holding": 2599.279587878504
+      },
+      {
+        "day": 45,
+        "stockouts": 2,
+        "dispatches": 1,
+        "stops": 5,
+        "delivered": 992830.0,
+        "travel": 37.519999999999996,
+        "holding": 1407.8845878785044
+      },
+      {
+        "day": 46,
+        "stockouts": 0,
+        "dispatches": 3,
+        "stops": 16,
+        "delivered": 3868615.0,
+        "travel": 94.01,
+        "holding": 1901.8545878785044
+      },
+      {
+        "day": 47,
+        "stockouts": 1,
+        "dispatches": 2,
+        "stops": 12,
+        "delivered": 2601945.0,
+        "travel": 81.67,
+        "holding": 2115.340542423959
+      },
+      {
+        "day": 48,
+        "stockouts": 0,
+        "dispatches": 2,
+        "stops": 9,
+        "delivered": 2103393.090909091,
+        "travel": 55.239999999999995,
+        "holding": 2067.4720878785047
+      },
+      {
+        "day": 49,
+        "stockouts": 10,
+        "dispatches": 1,
+        "stops": 5,
+        "delivered": 1292245.0,
+        "travel": 52.29,
+        "holding": 861.7275770992435
+      },
+      {
+        "day": 50,
+        "stockouts": 4,
+        "dispatches": 3,
+        "stops": 17,
+        "delivered": 4308399.021558522,
+        "travel": 89.945,
+        "holding": 2193.8870878785046
+      },
+      {
+        "day": 51,
+        "stockouts": 0,
+        "dispatches": 2,
+        "stops": 7,
+        "delivered": 2255710.0,
+        "travel": 42.96,
+        "holding": 3088.799587878504
+      },
+      {
+        "day": 52,
+        "stockouts": 0,
+        "dispatches": 0,
+        "stops": 0,
+        "delivered": 0.0,
+        "travel": 0.0,
+        "holding": 2221.5245878785045
+      },
+      {
+        "day": 53,
+        "stockouts": 0,
+        "dispatches": 2,
+        "stops": 8,
+        "delivered": 1791920.0,
+        "travel": 64.71000000000001,
+        "holding": 2693.644587878505
+      },
+      {
+        "day": 54,
+        "stockouts": 0,
+        "dispatches": 0,
+        "stops": 0,
+        "delivered": 0.0,
+        "travel": 0.0,
+        "holding": 2372.342087878504
+      },
+      {
+        "day": 55,
+        "stockouts": 0,
+        "dispatches": 1,
+        "stops": 5,
+        "delivered": 1121530.0,
+        "travel": 34.875,
+        "holding": 2621.024587878505
+      },
+      {
+        "day": 56,
+        "stockouts": 0,
+        "dispatches": 1,
+        "stops": 2,
+        "delivered": 405710.0,
+        "travel": 21.97,
+        "holding": 2167.177087878504
+      },
+      {
+        "day": 57,
+        "stockouts": 2,
+        "dispatches": 2,
+        "stops": 8,
+        "delivered": 1834120.0,
+        "travel": 58.849999999999994,
+        "holding": 2167.4241166726088
+      },
+      {
+        "day": 58,
+        "stockouts": 0,
+        "dispatches": 2,
+        "stops": 9,
+        "delivered": 1946335.9424117915,
+        "travel": 65.27,
+        "holding": 2578.947087878504
+      },
+      {
+        "day": 59,
+        "stockouts": 2,
+        "dispatches": 1,
+        "stops": 5,
+        "delivered": 1038620.0,
+        "travel": 40.39,
+        "holding": 1833.030335741752
+      },
+      {
+        "day": 60,
+        "stockouts": 1,
+        "dispatches": 2,
+        "stops": 11,
+        "delivered": 2902248.504273504,
+        "travel": 63.42999999999999,
+        "holding": 1833.5434475276272
+      },
+      {
+        "day": 61,
+        "stockouts": 0,
+        "dispatches": 2,
+        "stops": 10,
+        "delivered": 2531752.2807017546,
+        "travel": 74.66,
+        "holding": 2539.567087878505
+      },
+      {
+        "day": 62,
+        "stockouts": 0,
+        "dispatches": 1,
+        "stops": 6,
+        "delivered": 841095.0,
+        "travel": 40.165,
+        "holding": 2265.6895878785044
+      },
+      {
+        "day": 63,
+        "stockouts": 0,
+        "dispatches": 2,
+        "stops": 10,
+        "delivered": 2286900.0,
+        "travel": 85.91,
+        "holding": 2857.772087878504
+      },
+      {
+        "day": 64,
+        "stockouts": 0,
+        "dispatches": 1,
+        "stops": 1,
+        "delivered": 325660.0,
+        "travel": 15.2,
+        "holding": 2664.5395878785043
+      },
+      {
+        "day": 65,
+        "stockouts": 0,
+        "dispatches": 1,
+        "stops": 2,
+        "delivered": 313420.0,
+        "travel": 17.295,
+        "holding": 2625.9595878785044
+      },
+      {
+        "day": 66,
+        "stockouts": 0,
+        "dispatches": 1,
+        "stops": 1,
+        "delivered": 286300.0,
+        "travel": 18.79,
+        "holding": 2338.387087878504
+      },
+      {
+        "day": 67,
+        "stockouts": 0,
+        "dispatches": 1,
+        "stops": 4,
+        "delivered": 917895.0,
+        "travel": 32.769999999999996,
+        "holding": 2377.3470878785047
+      },
+      {
+        "day": 68,
+        "stockouts": 0,
+        "dispatches": 1,
+        "stops": 3,
+        "delivered": 890485.0,
+        "travel": 23.63,
+        "holding": 2471.8295878785043
+      },
+      {
+        "day": 69,
+        "stockouts": 0,
+        "dispatches": 1,
+        "stops": 3,
+        "delivered": 500070.0,
+        "travel": 32.1,
+        "holding": 2406.7120878785045
+      },
+      {
+        "day": 70,
+        "stockouts": 0,
+        "dispatches": 1,
+        "stops": 5,
+        "delivered": 983905.0,
+        "travel": 28.29,
+        "holding": 2387.359587878504
+      },
+      {
+        "day": 71,
+        "stockouts": 0,
+        "dispatches": 1,
+        "stops": 4,
+        "delivered": 840755.0,
+        "travel": 41.205,
+        "holding": 2309.2320878785044
+      },
+      {
+        "day": 72,
+        "stockouts": 0,
+        "dispatches": 2,
+        "stops": 9,
+        "delivered": 1895425.0,
+        "travel": 64.825,
+        "holding": 2945.2195878785046
+      },
+      {
+        "day": 73,
+        "stockouts": 0,
+        "dispatches": 1,
+        "stops": 2,
+        "delivered": 267270.0,
+        "travel": 24.675,
+        "holding": 1941.3770878785042
+      }
+    ]
+  },
+  "B1": {
+    "summary": {
+      "stockouts": 25,
+      "service_level": 0.9889527176314626,
+      "op_cost": 215726.0158163444,
+      "reported_total": 290726.0158163444,
+      "dispatches": 111,
+      "travel": 4454.245000000002,
+      "dispatch_cost": 33300.0,
+      "drop_fees": 49500.0,
+      "holding": 128471.77081634443,
+      "total_deliveries": 100309476.42134635,
+      "label": "B1 (quantile + greedy)"
+    },
+    "phase_breakdown": {
+      "cold_start": 0,
+      "catch_up": 5,
+      "steady_state": 20
+    },
+    "daily_log": [
+      {
+        "day": 1,
+        "stockouts": 0,
+        "dispatches": 0,
+        "stops": 0,
+        "delivered": 0.0,
+        "travel": 0.0,
+        "holding": 1861.9486611700722
+      },
+      {
+        "day": 2,
+        "stockouts": 0,
+        "dispatches": 1,
+        "stops": 2,
+        "delivered": 212387.18250429526,
+        "travel": 23.63,
+        "holding": 1768.66725242222
+      },
+      {
+        "day": 3,
+        "stockouts": 0,
+        "dispatches": 1,
+        "stops": 3,
+        "delivered": 163627.09249638027,
+        "travel": 27.985,
+        "holding": 1405.2632986704102
+      },
+      {
+        "day": 4,
+        "stockouts": 0,
+        "dispatches": 1,
+        "stops": 7,
+        "delivered": 378064.1954808632,
+        "travel": 46.184999999999995,
+        "holding": 1260.647896410842
+      },
+      {
+        "day": 5,
+        "stockouts": 0,
+        "dispatches": 1,
+        "stops": 6,
+        "delivered": 318314.7811599256,
+        "travel": 47.964999999999996,
+        "holding": 1108.9152869908044
+      },
+      {
+        "day": 6,
+        "stockouts": 0,
+        "dispatches": 1,
+        "stops": 15,
+        "delivered": 1471966.6104729716,
+        "travel": 65.89,
+        "holding": 1567.3185922272905
+      },
+      {
+        "day": 7,
+        "stockouts": 1,
+        "dispatches": 1,
+        "stops": 13,
+        "delivered": 934597.4900426562,
+        "travel": 59.80499999999999,
+        "holding": 1085.498824690886
+      },
+      {
+        "day": 8,
+        "stockouts": 1,
+        "dispatches": 3,
+        "stops": 20,
+        "delivered": 3654250.8997576935,
+        "travel": 87.3,
+        "holding": 1555.6043570422312
+      },
+      {
+        "day": 9,
+        "stockouts": 1,
+        "dispatches": 3,
+        "stops": 25,
+        "delivered": 4473023.652677004,
+        "travel": 90.375,
+        "holding": 2981.1718762428522
+      },
+      {
+        "day": 10,
+        "stockouts": 0,
+        "dispatches": 3,
+        "stops": 23,
+        "delivered": 3718130.0530405436,
+        "travel": 104.685,
+        "holding": 2961.659402763124
+      },
+      {
+        "day": 11,
+        "stockouts": 0,
+        "dispatches": 3,
+        "stops": 25,
+        "delivered": 3576907.297371802,
+        "travel": 91.845,
+        "holding": 2071.313051449025
+      },
+      {
+        "day": 12,
+        "stockouts": 2,
+        "dispatches": 3,
+        "stops": 28,
+        "delivered": 4448326.478147158,
+        "travel": 111.98499999999999,
+        "holding": 2096.8159103987787
+      },
+      {
+        "day": 13,
+        "stockouts": 0,
+        "dispatches": 3,
+        "stops": 27,
+        "delivered": 4135833.325169332,
+        "travel": 104.85,
+        "holding": 3833.332572983444
+      },
+      {
+        "day": 14,
+        "stockouts": 0,
+        "dispatches": 1,
+        "stops": 1,
+        "delivered": 45659.889950284094,
+        "travel": 12.79,
+        "holding": 3555.062517958587
+      },
+      {
+        "day": 15,
+        "stockouts": 0,
+        "dispatches": 0,
+        "stops": 0,
+        "delivered": 0.0,
+        "travel": 0.0,
+        "holding": 3246.8300179585876
+      },
+      {
+        "day": 16,
+        "stockouts": 0,
+        "dispatches": 0,
+        "stops": 0,
+        "delivered": 0.0,
+        "travel": 0.0,
+        "holding": 3024.0725179585866
+      },
+      {
+        "day": 17,
+        "stockouts": 0,
+        "dispatches": 1,
+        "stops": 10,
+        "delivered": 1317975.0438690549,
+        "travel": 69.28,
+        "holding": 2653.0475398931144
+      },
+      {
+        "day": 18,
+        "stockouts": 0,
+        "dispatches": 2,
+        "stops": 21,
+        "delivered": 2396047.492239536,
+        "travel": 82.28,
+        "holding": 3193.4212860128814
+      },
+      {
+        "day": 19,
+        "stockouts": 0,
+        "dispatches": 1,
+        "stops": 1,
+        "delivered": 73362.80781250002,
+        "travel": 18.79,
+        "holding": 2742.630189919132
+      },
+      {
+        "day": 20,
+        "stockouts": 0,
+        "dispatches": 0,
+        "stops": 0,
+        "delivered": 0.0,
+        "travel": 0.0,
+        "holding": 2378.6251899191325
+      },
+      {
+        "day": 21,
+        "stockouts": 0,
+        "dispatches": 1,
+        "stops": 1,
+        "delivered": 55297.474218749965,
+        "travel": 15.2,
+        "holding": 2057.306427028507
+      },
+      {
+        "day": 22,
+        "stockouts": 0,
+        "dispatches": 1,
+        "stops": 1,
+        "delivered": 60918.81367187499,
+        "travel": 15.2,
+        "holding": 1835.148333864445
+      },
+      {
+        "day": 23,
+        "stockouts": 0,
+        "dispatches": 1,
+        "stops": 1,
+        "delivered": 22876.85240885416,
+        "travel": 14.06,
+        "holding": 1707.1467600688723
+      },
+      {
+        "day": 24,
+        "stockouts": 0,
+        "dispatches": 1,
+        "stops": 3,
+        "delivered": 346622.4748477711,
+        "travel": 31.55,
+        "holding": 1530.3354974927577
+      },
+      {
+        "day": 25,
+        "stockouts": 0,
+        "dispatches": 1,
+        "stops": 13,
+        "delivered": 1327047.3369295239,
+        "travel": 58.114999999999995,
+        "holding": 1699.3266659575197
+      },
+      {
+        "day": 26,
+        "stockouts": 0,
+        "dispatches": 2,
+        "stops": 12,
+        "delivered": 1611769.9288459332,
+        "travel": 57.955,
+        "holding": 1748.1216303804858
+      },
+      {
+        "day": 27,
+        "stockouts": 0,
+        "dispatches": 2,
+        "stops": 20,
+        "delivered": 2122534.786010742,
+        "travel": 88.805,
+        "holding": 2005.9740233858568
+      },
+      {
+        "day": 28,
+        "stockouts": 0,
+        "dispatches": 1,
+        "stops": 14,
+        "delivered": 622512.0144154055,
+        "travel": 56.339999999999996,
+        "holding": 1288.4050305935596
+      },
+      {
+        "day": 29,
+        "stockouts": 10,
+        "dispatches": 1,
+        "stops": 5,
+        "delivered": 451242.7676571117,
+        "travel": 35.46,
+        "holding": 366.1452523322583
+      },
+      {
+        "day": 30,
+        "stockouts": 1,
+        "dispatches": 3,
+        "stops": 27,
+        "delivered": 3294291.8145135674,
+        "travel": 108.9,
+        "holding": 1786.9136595890418
+      },
+      {
+        "day": 31,
+        "stockouts": 2,
+        "dispatches": 1,
+        "stops": 8,
+        "delivered": 508538.5355103503,
+        "travel": 45.794999999999995,
+        "holding": 792.6454138079336
+      },
+      {
+        "day": 32,
+        "stockouts": 1,
+        "dispatches": 2,
+        "stops": 22,
+        "delivered": 1901177.8407899973,
+        "travel": 77.78999999999999,
+        "holding": 1155.1943342029324
+      },
+      {
+        "day": 33,
+        "stockouts": 1,
+        "dispatches": 1,
+        "stops": 7,
+        "delivered": 543116.8723618451,
+        "travel": 53.015,
+        "holding": 1029.3977703838548
+      },
+      {
+        "day": 34,
+        "stockouts": 1,
+        "dispatches": 1,
+        "stops": 13,
+        "delivered": 649728.974479406,
+        "travel": 66.26499999999999,
+        "holding": 1000.0222576235578
+      },
+      {
+        "day": 35,
+        "stockouts": 1,
+        "dispatches": 1,
+        "stops": 12,
+        "delivered": 542128.2665249729,
+        "travel": 60.52499999999999,
+        "holding": 961.4013908860442
+      },
+      {
+        "day": 36,
+        "stockouts": 1,
+        "dispatches": 1,
+        "stops": 7,
+        "delivered": 240023.58344726564,
+        "travel": 42.835,
+        "holding": 877.0556826096774
+      },
+      {
+        "day": 37,
+        "stockouts": 0,
+        "dispatches": 2,
+        "stops": 24,
+        "delivered": 1558796.0998489643,
+        "travel": 104.96000000000001,
+        "holding": 1534.1062325341595
+      },
+      {
+        "day": 38,
+        "stockouts": 0,
+        "dispatches": 2,
+        "stops": 20,
+        "delivered": 1025687.0767303468,
+        "travel": 80.85500000000002,
+        "holding": 1743.039770899333
+      },
+      {
+        "day": 39,
+        "stockouts": 0,
+        "dispatches": 1,
+        "stops": 15,
+        "delivered": 1253483.1185814643,
+        "travel": 53.98,
+        "holding": 1927.8138301900651
+      },
+      {
+        "day": 40,
+        "stockouts": 0,
+        "dispatches": 2,
+        "stops": 15,
+        "delivered": 1470876.935620117,
+        "travel": 73.915,
+        "holding": 2305.6997980001233
+      },
+      {
+        "day": 41,
+        "stockouts": 0,
+        "dispatches": 1,
+        "stops": 17,
+        "delivered": 1491846.8294165826,
+        "travel": 63.3,
+        "holding": 1847.693212708415
+      },
+      {
+        "day": 42,
+        "stockouts": 0,
+        "dispatches": 1,
+        "stops": 12,
+        "delivered": 1048874.2872070312,
+        "travel": 51.42999999999999,
+        "holding": 1241.9328563119302
+      },
+      {
+        "day": 43,
+        "stockouts": 0,
+        "dispatches": 2,
+        "stops": 12,
+        "delivered": 1750082.0169677734,
+        "travel": 64.895,
+        "holding": 1292.098864795817
+      },
+      {
+        "day": 44,
+        "stockouts": 0,
+        "dispatches": 3,
+        "stops": 28,
+        "delivered": 4438996.444458008,
+        "travel": 104.485,
+        "holding": 2977.117087024821
+      },
+      {
+        "day": 45,
+        "stockouts": 0,
+        "dispatches": 1,
+        "stops": 12,
+        "delivered": 1105128.1377319335,
+        "travel": 54.19,
+        "holding": 1808.1461558907877
+      },
+      {
+        "day": 46,
+        "stockouts": 0,
+        "dispatches": 3,
+        "stops": 26,
+        "delivered": 3093303.209997558,
+        "travel": 100.785,
+        "holding": 1914.460260889567
+      },
+      {
+        "day": 47,
+        "stockouts": 0,
+        "dispatches": 3,
+        "stops": 26,
+        "delivered": 3295625.5885803225,
+        "travel": 120.01499999999999,
+        "holding": 2472.278055179728
+      },
+      {
+        "day": 48,
+        "stockouts": 0,
+        "dispatches": 2,
+        "stops": 21,
+        "delivered": 1974432.6585327147,
+        "travel": 90.155,
+        "holding": 2359.929384446086
+      },
+      {
+        "day": 49,
+        "stockouts": 1,
+        "dispatches": 2,
+        "stops": 22,
+        "delivered": 1550440.3363466498,
+        "travel": 93.36500000000001,
+        "holding": 1136.0628404411016
+      },
+      {
+        "day": 50,
+        "stockouts": 0,
+        "dispatches": 2,
+        "stops": 20,
+        "delivered": 1875459.8741603727,
+        "travel": 73.175,
+        "holding": 1094.0427775212881
+      },
+      {
+        "day": 51,
+        "stockouts": 0,
+        "dispatches": 1,
+        "stops": 11,
+        "delivered": 963591.8853545097,
+        "travel": 52.60999999999999,
+        "holding": 1342.896220198543
+      },
+      {
+        "day": 52,
+        "stockouts": 0,
+        "dispatches": 1,
+        "stops": 16,
+        "delivered": 904508.7217424428,
+        "travel": 51.224999999999994,
+        "holding": 927.8755810697646
+      },
+      {
+        "day": 53,
+        "stockouts": 0,
+        "dispatches": 2,
+        "stops": 22,
+        "delivered": 1157322.1474425518,
+        "travel": 86.29500000000002,
+        "holding": 1082.6966547910404
+      },
+      {
+        "day": 54,
+        "stockouts": 0,
+        "dispatches": 1,
+        "stops": 5,
+        "delivered": 225242.28744255519,
+        "travel": 48.185,
+        "holding": 874.0152985123179
+      },
+      {
+        "day": 55,
+        "stockouts": 0,
+        "dispatches": 2,
+        "stops": 24,
+        "delivered": 2875886.82846041,
+        "travel": 88.05000000000001,
+        "holding": 1999.8762127425227
+      },
+      {
+        "day": 56,
+        "stockouts": 0,
+        "dispatches": 2,
+        "stops": 16,
+        "delivered": 810016.3364509135,
+        "travel": 87.235,
+        "holding": 1748.1818809679792
+      },
+      {
+        "day": 57,
+        "stockouts": 0,
+        "dispatches": 1,
+        "stops": 12,
+        "delivered": 1417168.9165412453,
+        "travel": 51.0,
+        "holding": 1523.7913392386017
+      },
+      {
+        "day": 58,
+        "stockouts": 0,
+        "dispatches": 3,
+        "stops": 24,
+        "delivered": 4277273.432922364,
+        "travel": 110.34,
+        "holding": 3100.7830556997837
+      },
+      {
+        "day": 59,
+        "stockouts": 0,
+        "dispatches": 2,
+        "stops": 19,
+        "delivered": 1754519.6200812845,
+        "travel": 77.595,
+        "holding": 2694.420365740426
+      },
+      {
+        "day": 60,
+        "stockouts": 0,
+        "dispatches": 2,
+        "stops": 20,
+        "delivered": 1958669.9051621382,
+        "travel": 85.685,
+        "holding": 2212.3153183214954
+      },
+      {
+        "day": 61,
+        "stockouts": 0,
+        "dispatches": 1,
+        "stops": 5,
+        "delivered": 391655.994804113,
+        "travel": 24.005000000000003,
+        "holding": 1848.2908157235515
+      },
+      {
+        "day": 62,
+        "stockouts": 1,
+        "dispatches": 1,
+        "stops": 7,
+        "delivered": 442387.8212890625,
+        "travel": 43.135,
+        "holding": 1386.5256210857674
+      },
+      {
+        "day": 63,
+        "stockouts": 0,
+        "dispatches": 1,
+        "stops": 7,
+        "delivered": 409016.5478693182,
+        "travel": 34.805,
+        "holding": 1039.6663950204268
+      },
+      {
+        "day": 64,
+        "stockouts": 0,
+        "dispatches": 1,
+        "stops": 1,
+        "delivered": 42177.78583984375,
+        "travel": 13.88,
+        "holding": 704.6927879403484
+      },
+      {
+        "day": 65,
+        "stockouts": 0,
+        "dispatches": 1,
+        "stops": 15,
+        "delivered": 926509.1794433594,
+        "travel": 61.9,
+        "holding": 972.6573776620281
+      },
+      {
+        "day": 66,
+        "stockouts": 0,
+        "dispatches": 1,
+        "stops": 13,
+        "delivered": 530795.0002685548,
+        "travel": 46.515,
+        "holding": 807.3323777963053
+      },
+      {
+        "day": 67,
+        "stockouts": 0,
+        "dispatches": 1,
+        "stops": 16,
+        "delivered": 797717.2375488281,
+        "travel": 66.25500000000001,
+        "holding": 786.2034965707192
+      },
+      {
+        "day": 68,
+        "stockouts": 0,
+        "dispatches": 2,
+        "stops": 21,
+        "delivered": 1701907.2639160154,
+        "travel": 86.45500000000001,
+        "holding": 1286.3971285287273
+      },
+      {
+        "day": 69,
+        "stockouts": 0,
+        "dispatches": 2,
+        "stops": 18,
+        "delivered": 900166.9341918943,
+        "travel": 80.97,
+        "holding": 1421.3280956246745
+      },
+      {
+        "day": 70,
+        "stockouts": 0,
+        "dispatches": 1,
+        "stops": 12,
+        "delivered": 790750.0416748046,
+        "travel": 59.040000000000006,
+        "holding": 1305.3981164620768
+      },
+      {
+        "day": 71,
+        "stockouts": 0,
+        "dispatches": 1,
+        "stops": 13,
+        "delivered": 1132159.0053222657,
+        "travel": 49.98500000000001,
+        "holding": 1372.9726191232094
+      },
+      {
+        "day": 72,
+        "stockouts": 0,
+        "dispatches": 3,
+        "stops": 25,
+        "delivered": 3054559.3537377142,
+        "travel": 106.71000000000001,
+        "holding": 2588.5272959920667
+      },
+      {
+        "day": 73,
+        "stockouts": 0,
+        "dispatches": 1,
+        "stops": 5,
+        "delivered": 294138.9308349609,
+        "travel": 39.415,
+        "holding": 1598.119261409547
+      }
+    ]
+  },
+  "B2": {
+    "label": "B2 (point + IRP)",
+    "stockouts": 262,
+    "service_level": 0.8842244807777286,
+    "op_cost": 136100.82975026395,
+    "reported_total": 922100.829750264,
+    "dispatches": 83
+  },
+  "proposed": {
+    "label": "Proposed (quantile + IRP)",
+    "stockouts": 121,
+    "service_level": 0.9465311533362792,
+    "op_cost": 156295.0,
+    "reported_total": 519295.0,
+    "dispatches": 87
+  }
+}
