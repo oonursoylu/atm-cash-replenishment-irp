@@ -254,12 +254,11 @@ result interpretation, and thesis responsibility remain with the author.
 
 ## Key References
 
-- Bertazzi and Speranza (2013): multi-vehicle inventory routing
-- Bertsimas and Kallus (2020): predict-then-optimize framework
-- Arrow, Harris and Marschak (1951): critical-fractile inventory theory
-- Powell (2011): approximate dynamic programming and rolling-horizon logic
-- Ekinci, Lu and Duman (2015): ATM cash-management context
-- Simutis et al. (2008) and Venkatesh et al. (2014): ATM service-level benchmarks
+- Bertsimas and Kallus (2020), Sadana et al. (2024): contextual optimization and predict-then-optimize
+- Arrow et al. (1951), Trapero et al. (2019): critical-fractile logic and quantile-based inventory forecasting
+- Bertazzi and Speranza (2013), Coelho et al. (2014): inventory routing formulation and survey literature
+- Simutis et al. (2008), Venkatesh et al. (2014), Ekinci et al. (2015): ATM cash-demand forecasting and replenishment context
+- van Anholt et al. (2016), Jia et al. (2025): related ATM/online inventory-routing studies
 - Lundberg and Lee (2017): SHAP feature attribution
 
 ## License
