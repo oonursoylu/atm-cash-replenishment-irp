@@ -39,6 +39,7 @@ env/
 # Data & artifacts (keep on disk, not in git)
 data/
 models/*.joblib
+models/backup_pre_alpha099_20260526/
 predictions/*.csv
 outputs/*
 !outputs/shap/
@@ -59,6 +60,8 @@ docs/decision_register.md
 docs/methodology_state.md
 docs/baseline_design_spec.md
 docs/phase_4j_v3_results.md
+docs/phase_alpha_safety_robustness_results.md
+configs/optimize.yaml.bak_*
 
 # OS
 .DS_Store

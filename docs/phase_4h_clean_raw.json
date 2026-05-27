@@ -1,0 +1,54 @@
+[
+  {
+    "use_heterogeneous_capacity": false,
+    "num_vehicles": 2,
+    "compute_sec": 881.3,
+    "total_cost": 308989.41,
+    "stockouts": 80,
+    "dispatches": 34,
+    "travel_cost": 1687.6,
+    "dispatch_cost": 10200.0,
+    "drop_fees": 17700.0,
+    "holding_cost": 39401.81,
+    "stockout_cost": 240000.0
+  },
+  {
+    "use_heterogeneous_capacity": false,
+    "num_vehicles": 3,
+    "compute_sec": 1674.5,
+    "total_cost": 330626.3,
+    "stockouts": 87,
+    "dispatches": 34,
+    "travel_cost": 1780.53,
+    "dispatch_cost": 10200.0,
+    "drop_fees": 18200.0,
+    "holding_cost": 39445.77,
+    "stockout_cost": 261000.0
+  },
+  {
+    "use_heterogeneous_capacity": true,
+    "num_vehicles": 2,
+    "compute_sec": 1534.2,
+    "total_cost": 316335.78,
+    "stockouts": 83,
+    "dispatches": 33,
+    "travel_cost": 1825.74,
+    "dispatch_cost": 9900.0,
+    "drop_fees": 18700.0,
+    "holding_cost": 36910.04,
+    "stockout_cost": 249000.0
+  },
+  {
+    "use_heterogeneous_capacity": true,
+    "num_vehicles": 3,
+    "compute_sec": 2297.8,
+    "total_cost": 282840.51,
+    "stockouts": 72,
+    "dispatches": 35,
+    "travel_cost": 1730.79,
+    "dispatch_cost": 10500.0,
+    "drop_fees": 18550.0,
+    "holding_cost": 36059.72,
+    "stockout_cost": 216000.0
+  }
+]

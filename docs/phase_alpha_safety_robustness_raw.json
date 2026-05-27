@@ -1,0 +1,41 @@
+[
+  {
+    "alpha_safety": 0.9,
+    "total_cost": 344327.67,
+    "stockouts": 94,
+    "dispatches": 32,
+    "travel_cost": 1676.93,
+    "dispatch_cost": 9600.0,
+    "drop_fees": 18250.0,
+    "holding_cost": 32800.75,
+    "stockout_cost": 282000.0,
+    "compute_sec": 2183.3,
+    "_source": "Fresh v8 retraining at trials=50, seed=42 (CSV mtime 2026-05-26 23:02). IRP at 30-day, gap=0.05, hetero+nv=3, (3000, 0.1), low=0.30, symmetric OSM, seed=42."
+  },
+  {
+    "alpha_safety": 0.95,
+    "total_cost": 268058.56,
+    "stockouts": 66,
+    "dispatches": 37,
+    "travel_cost": 1880.33,
+    "dispatch_cost": 11100.0,
+    "drop_fees": 19150.0,
+    "holding_cost": 37928.23,
+    "stockout_cost": 198000.0,
+    "compute_sec": 1888.0,
+    "_source": "Fresh v8 retraining at trials=50, seed=42 (CSV mtime 2026-05-26 23:10). IRP at 30-day, gap=0.05, hetero+nv=3, (3000, 0.1), low=0.30, symmetric OSM, seed=42. REPRO CHECK: bit-exact match to docs/phase_4a_raw.json row 1 (66 stockouts, 70,058.56 op cost). Pipeline fully deterministic."
+  },
+  {
+    "alpha_safety": 0.99,
+    "total_cost": 186791.44,
+    "stockouts": 36,
+    "dispatches": 35,
+    "travel_cost": 1897.8,
+    "dispatch_cost": 10500.0,
+    "drop_fees": 20000.0,
+    "holding_cost": 46393.64,
+    "stockout_cost": 108000.0,
+    "compute_sec": 1908.1,
+    "_source": "Fresh v8 retraining at trials=50, seed=42 (CSV mtime 2026-05-26 23:16). IRP at 30-day, gap=0.05, hetero+nv=3, (3000, 0.1), low=0.30, symmetric OSM, seed=42. Test coverage at training: d_safety=0.957 (target 0.99, under-covers by 3.3pp)."
+  }
+]
