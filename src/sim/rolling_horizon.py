@@ -40,6 +40,7 @@ def _execute_day(
     tt: dict[tuple[int, int], float],
     cfg: dict,
     kpis: SimulationKPIs,
+    deterministic: bool = False,
 ) -> bool:
     """
     Execute one simulation day: solve the rolling-horizon MILP, apply day-1
@@ -50,7 +51,13 @@ def _execute_day(
     """
     print(f"\n[DAY {sim_day}/{cfg['SIMULATION_DAYS']}] Solving 7-day horizon...")
 
-    actions, sol = solve_single_horizon(sim_day, actual_inventory, master_data, cfg)
+    actions, sol = solve_single_horizon(
+        sim_day,
+        actual_inventory,
+        master_data,
+        cfg,
+        deterministic=deterministic,
+    )
     if sol is None:
         print(f"  [!] INFEASIBLE on Day {sim_day}. Stopping simulation.")
         return False
@@ -168,7 +175,24 @@ def run_simulation(
     tt, backend = build_travel_matrix(sp, cfg)
     atms = sorted(sp["atm_location"].keys())
 
-    provenance = build_provenance(cfg, tt, backend)
+    deterministic = cfg.get("CPLEX_DETERMINISTIC", False)
+    provenance = build_provenance(cfg, tt, backend, deterministic=deterministic)
+    _expected_tt_hash = {
+        True: "76013f9295fe036d980740994878c3be",
+        False: "bdbc52b4269920118507228965a3d4bf",
+    }
+    expected_hash = _expected_tt_hash.get(provenance["symmetrize"])
+    if (
+        cfg.get("USE_OSM", True)
+        and backend == "OSM"
+        and expected_hash is not None
+        and provenance["travel_matrix_hash"] != expected_hash
+    ):
+        raise RuntimeError(
+            f"Travel matrix hash mismatch: {provenance['travel_matrix_hash']} "
+            f"(symmetrize={provenance['symmetrize']}), expected {expected_hash}. "
+            "Refusing to run on a non-canonical matrix."
+        )
     print(f"[PROVENANCE] {json.dumps(provenance)}")
 
     if cfg["USE_HETEROGENEOUS_CAPACITY"]:
@@ -214,6 +238,7 @@ def run_simulation(
             tt=tt,
             cfg=cfg,
             kpis=kpis,
+            deterministic=deterministic,
         )
         if not ok:
             break

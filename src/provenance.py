@@ -12,6 +12,7 @@ their output; run_simulation can also return it (see rolling_horizon).
 from __future__ import annotations
 
 import hashlib
+import os
 import re
 import sys
 from pathlib import Path
@@ -79,6 +80,8 @@ def build_provenance(
     cfg: dict,
     tt: dict[tuple[int, int], float] | None = None,
     backend: str | None = None,
+    *,
+    deterministic: bool = False,
 ) -> dict[str, Any]:
     """
     Build a flat provenance record for one run.
@@ -108,6 +111,10 @@ def build_provenance(
         "use_heterogeneous_capacity": cfg.get("USE_HETEROGENEOUS_CAPACITY"),
         "stockout_penalty": cfg.get("STOCKOUT_PENALTY"),
         "safety_floor_pen": cfg.get("SAFETY_FLOOR_PEN"),
+        "cplex_deterministic": deterministic,
+        "cplex_parallel_mode": 1 if deterministic else 0,
+        "cplex_threads": 0,
+        "cpu_count": os.cpu_count(),
     }
     rec.update(_versions())
     return rec
