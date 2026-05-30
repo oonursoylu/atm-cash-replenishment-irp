@@ -28,7 +28,7 @@ Canonical reporting setup:
 | 4.2.2 | Capacity/fleet 2x2 | `phase_4h_2x2_frozen_20260530.json` | complete | Frozen result: uniform-nv3 has lowest stockouts (70), hetero-nv3 has lowest operational cost (66,840.51 TL). |
 | 4.2.3 | Cost parameter grid | `phase_4a_cost_grid_frozen_20260530.json` | complete | Frozen grid complete: `3000/0.1` is the cost-disciplined knee (72 SO / 66,840.51 TL); `3000/1.0` is the higher-service alternative (69 SO / 70,062.79 TL). Old inverse-penalty and U-shape claims are weakened/withdrawn. |
 | 4.3.2 / 4.4 | Alpha safety sweep | `phase_4_alpha_safety_sweep_frozen_20260530.json` | complete | Frozen result confirms monotone service-cost trade-off: alpha 0.90 -> 84 SO / 64,577.18 TL op; 0.95 -> 72 SO / 66,840.51 TL op; 0.99 -> 34 SO / 79,617.33 TL op. Alpha 0.95 remains the cost-disciplined lower-band policy; 0.99 is the high-service alternative. |
-| 4.2.4 | Initial inventory sweep | TBD | pending | Must be rerun under frozen symmetric matrix. |
+| 4.2.4 | Initial inventory sweep | `phase_4i_initial_inventory_frozen_20260530.json` | complete | Frozen result: lows 0.10/0.20/0.30/0.40/0.50 give 79/79/72/73/71 SO and 66,247.06/67,287.43/66,840.51/68,012.25/69,219.36 TL op. Old sharp V-shape is weakened: `0.30` remains the cost-disciplined operating band, while `0.50` is a higher-inventory alternative with only 1 fewer SO and higher holding/op cost. |
 | 4.4.1 | Multi-seed variance | TBD | pending | Must be rerun under frozen symmetric matrix if time allows. |
 | 4.5.6 | Baseline comparison | TBD | pending | Must be rerun or revalidated under frozen matrix. |
 | 4.5 | 73-day headline | TBD | pending | Run last, after calibration decisions are confirmed. |
