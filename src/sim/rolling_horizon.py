@@ -3,6 +3,7 @@ Rolling-horizon simulation: orchestrates setup, daily solve loops, KPI accumulat
 Map generation is an optional callback to decouple from visualization layer.
 """
 
+import json
 import time
 from typing import Callable, TypedDict
 
@@ -11,6 +12,7 @@ from ..data.travel import build_travel_matrix
 from ..data.synthetic_demand import generate_master_timeseries
 from ..data.real_demand import load_real_demand
 from ..optim.irp_milp import solve_single_horizon, MasterData
+from ..provenance import build_provenance
 
 
 class SimulationKPIs(TypedDict):
@@ -135,7 +137,8 @@ def run_simulation(
     cfg: dict,
     *,
     map_generator: MapGenerator | None = None,
-) -> SimulationKPIs:
+    return_provenance: bool = False,
+) -> SimulationKPIs | tuple[SimulationKPIs, dict]:
     """
     Top-level rolling-horizon simulation.
 
@@ -145,6 +148,11 @@ def run_simulation(
 
     The optional map_generator callback is invoked once before the loop.
     Pass None to skip map output.
+
+    Provenance: a reproducibility record (build_provenance) is always printed as a
+    one-line `[PROVENANCE]` stamp. When return_provenance=True the function
+    returns (kpis, provenance) so result writers can embed it; the default
+    return shape (kpis only) is unchanged for existing callers.
     """
     print("=" * 82)
     print(f"STARTING {cfg['SIMULATION_DAYS']}-DAY ROLLING HORIZON SIMULATION")
@@ -157,8 +165,11 @@ def run_simulation(
 
     # Setup
     sp = load_hardcoded_spatial()
-    tt, _backend = build_travel_matrix(sp, cfg)
+    tt, backend = build_travel_matrix(sp, cfg)
     atms = sorted(sp["atm_location"].keys())
+
+    provenance = build_provenance(cfg, tt, backend)
+    print(f"[PROVENANCE] {json.dumps(provenance)}")
 
     if cfg["USE_HETEROGENEOUS_CAPACITY"]:
         capacity_per_atm = get_capacity_per_atm()
@@ -209,4 +220,6 @@ def run_simulation(
 
     elapsed = time.time() - start_time
     _print_summary(kpis, cfg, n_atms=len(atms), elapsed_sec=elapsed)
+    if return_provenance:
+        return kpis, provenance
     return kpis

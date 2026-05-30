@@ -19,6 +19,18 @@ from ..data.spatial import SpatialData
 # 107: time-limit-feasible, 113: solution-limit-feasible.
 _FEASIBLE_STATUS_CODES = (101, 102, 105, 107, 113)
 
+# ---- determinism hardening -------------------------------------------------
+# Deterministic tick budget for dettimelimit. CPLEX measures this in hardware-
+# independent "ticks", so a tick-limited solve halts at the SAME branch-and-cut
+# node on every run/machine -- unlike the wall-clock timelimit, whose binding
+# point depends on CPU speed and machine load (a source of cross-process drift).
+# Set high so that solves which terminate via the MIP gap are unaffected (current
+# behaviour preserved); it acts as a deterministic ceiling for genuinely hard
+# solves. Lower it if reproducible EARLY termination is desired. Tradeoff: ticks
+# do not map to a fixed wall-time, so the wall-clock TIME_LIMIT_SEC is retained
+# as the outer safety fallback that bounds real elapsed time.
+_CPLEX_DETTIME_TICKS = 1.0e8
+
 
 class IRPConfig(TypedDict):
     """CONFIG keys consumed by this module. Other keys are ignored."""
@@ -301,10 +313,21 @@ def build_model(
     )
 
 
-def solve_model(irp: IRPModel, cfg: IRPConfig) -> Any:
+def solve_model(irp: IRPModel, cfg: IRPConfig, *, deterministic: bool = False) -> Any:
     """
     Configure CPLEX and solve. Returns SolveSolution or None.
     Uses empirically-tuned heuristics (RINS, probe) to find good incumbents quickly.
+
+    Determinism hardening (deterministic=True, opt-in): adds single-source-of-
+    truth settings that can make the branch-and-cut search reproducible across
+    separate processes/machines, but may select a different within-gap incumbent:
+      * parallel = 1            -> deterministic parallel mode (reproducible even
+                                   with multiple threads; opportunistic mode is not)
+      * randomseed = cfg SEED   -> fixes CPLEX's internal RNG (tie-breaking, etc.)
+      * dettimelimit            -> deterministic (tick-based) termination ceiling;
+                                   the wall-clock timelimit stays as a fallback.
+    The default deterministic=False preserves the pre-hardening solver
+    configuration; use deterministic=True only for an explicit hardened run.
     """
     mdl = irp.mdl
     mdl.parameters.mip.tolerances.mipgap = cfg["MIP_GAP"]
@@ -313,6 +336,10 @@ def solve_model(irp: IRPModel, cfg: IRPConfig) -> Any:
     mdl.parameters.mip.strategy.heuristicfreq = 20
     mdl.parameters.mip.strategy.rinsheur = 50
     mdl.parameters.mip.strategy.probe = 2
+    if deterministic:
+        mdl.parameters.parallel = 1                       # deterministic parallel mode
+        mdl.parameters.randomseed = int(cfg.get("SEED", 42))
+        mdl.parameters.dettimelimit = _CPLEX_DETTIME_TICKS
     return mdl.solve(log_output=False)
 
 
@@ -371,15 +398,20 @@ def solve_single_horizon(
     actual_inventory: dict[str, float],
     master_data: MasterData,
     cfg: IRPConfig,
+    *,
+    deterministic: bool = False,
 ) -> tuple[Day1Actions, Any]:
     """
     Legacy-compatible entry point. Builds, solves, extracts, and disposes of
     the CPLEX model in one call. Use this from the simulation loop; use
     build_model/solve_model/extract_actions directly when you need to inspect
     or modify the model between stages (e.g. recourse experiments).
+
+    `deterministic` is forwarded to solve_model (default False = legacy;
+    True = opt-in hardening).
     """
     irp = build_model(sim_day, actual_inventory, master_data, cfg)
-    sol = solve_model(irp, cfg)
+    sol = solve_model(irp, cfg, deterministic=deterministic)
     actions = extract_actions(irp, sol)
     has_solution = (sol is not None) and (
         irp.mdl.solve_details.status_code in _FEASIBLE_STATUS_CODES

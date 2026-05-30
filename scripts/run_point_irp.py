@@ -60,7 +60,7 @@ def main() -> None:
     print("=" * 82)
 
     t0 = time.time()
-    kpis = run_simulation(cfg)
+    kpis, provenance = run_simulation(cfg, return_provenance=True)
     elapsed = time.time() - t0
 
     op_cost = (
@@ -85,6 +85,7 @@ def main() -> None:
         "total_deliveries": kpis["total_deliveries"],
         "n_atm_days": n_atm_days,
         "elapsed_sec": elapsed,
+        "provenance": provenance,
     }
 
     out_path = ROOT / "docs" / "point_irp_results.json"

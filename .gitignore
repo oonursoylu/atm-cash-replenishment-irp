@@ -37,7 +37,11 @@ env/
 *.ipynb
 
 # Data & artifacts (keep on disk, not in git)
-data/
+# Anchored to the repo-root data/ ONLY (leading slash), so this no longer also
+# ignores the src/data/ source package. Raw inputs under data/ stay ignored, but
+# the frozen reproducibility artifacts (data/frozen/) are tracked.
+/data/*
+!/data/frozen/
 models/*.joblib
 models/backup_pre_alpha099_20260526/
 predictions/*.csv
