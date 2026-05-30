@@ -1,4 +1,4 @@
-﻿# Frozen IRP Results Manifest
+# Frozen IRP Results Manifest
 
 Date started: 2026-05-30
 
@@ -27,7 +27,7 @@ Canonical reporting setup:
 |---|---|---|---|---|
 | 4.2.2 | Capacity/fleet 2x2 | `phase_4h_2x2_frozen_20260530.json` | complete | Frozen result: uniform-nv3 has lowest stockouts (70), hetero-nv3 has lowest operational cost (66,840.51 TL). |
 | 4.2.3 | Cost parameter grid | `phase_4a_cost_grid_frozen_20260530.json` | complete | Frozen grid complete: `3000/0.1` is the cost-disciplined knee (72 SO / 66,840.51 TL); `3000/1.0` is the higher-service alternative (69 SO / 70,062.79 TL). Old inverse-penalty and U-shape claims are weakened/withdrawn. |
-| 4.3.2 / 4.4 | Alpha safety sweep | TBD | pending | Requires s0.90/s0.99 forecast hash checks first. |
+| 4.3.2 / 4.4 | Alpha safety sweep | `phase_4_alpha_safety_sweep_frozen_20260530.json` | complete | Frozen result confirms monotone service-cost trade-off: alpha 0.90 -> 84 SO / 64,577.18 TL op; 0.95 -> 72 SO / 66,840.51 TL op; 0.99 -> 34 SO / 79,617.33 TL op. Alpha 0.95 remains the cost-disciplined lower-band policy; 0.99 is the high-service alternative. |
 | 4.2.4 | Initial inventory sweep | TBD | pending | Must be rerun under frozen symmetric matrix. |
 | 4.4.1 | Multi-seed variance | TBD | pending | Must be rerun under frozen symmetric matrix if time allows. |
 | 4.5.6 | Baseline comparison | TBD | pending | Must be rerun or revalidated under frozen matrix. |
@@ -46,4 +46,5 @@ Final thesis claims should be written from this manifest and the frozen result J
 | 0.99 | `predictions/test_predictions_p0.55_s0.99.csv` | `e23806961b4c2cb7290d7dbf3905305f` | v8, 50-trial Optuna, seed 42, log `train_models_20260526_231250.log` |
 
 The active alpha-sweep CSVs are distinct from the earlier reduced-trial artifacts. Final alpha-sweep IRP reruns should use only these hashes.
+
 
