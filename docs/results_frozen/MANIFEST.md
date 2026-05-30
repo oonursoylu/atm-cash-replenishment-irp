@@ -36,3 +36,13 @@ Canonical reporting setup:
 ## Writing Rule
 
 Final thesis claims should be written from this manifest and the frozen result JSONs, not from the pre-frozen root `docs/phase_*.json` files.
+
+## Forecast Inputs for Alpha Sweep
+
+| alpha_safety | CSV | MD5 hash | Attestation |
+|---:|---|---|---|
+| 0.90 | `predictions/test_predictions_p0.55_s0.9.csv` | `4ed26d7f262d7503d8220386d32aad80` | v8, 50-trial Optuna, seed 42, log `train_models_20260526_225747.log` |
+| 0.95 | `predictions/test_predictions_p0.55_s0.95.csv` | `b9432a2eba76b887b49597cc705f0d8e` | v8, 50-trial Optuna, seed 42, log `train_models_20260526_230631.log` |
+| 0.99 | `predictions/test_predictions_p0.55_s0.99.csv` | `e23806961b4c2cb7290d7dbf3905305f` | v8, 50-trial Optuna, seed 42, log `train_models_20260526_231250.log` |
+
+The active alpha-sweep CSVs are distinct from the earlier reduced-trial artifacts. Final alpha-sweep IRP reruns should use only these hashes.
