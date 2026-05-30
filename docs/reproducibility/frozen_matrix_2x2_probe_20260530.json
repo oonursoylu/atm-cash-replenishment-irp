@@ -1,0 +1,103 @@
+{
+  "meta": {
+    "purpose": "Frozen travel-matrix 2x2 probe; no optimize.yaml mutation.",
+    "frozen_backend": "OSM",
+    "frozen_tt_hash": "76013f9295fe036d980740994878c3be",
+    "frozen_tt_sum": 7569.32,
+    "fixed": {
+      "days": 30,
+      "planning_horizon": 7,
+      "mip_gap": 0.05,
+      "time_limit_sec": 600,
+      "stockout_penalty": 3000,
+      "safety_floor_pen": 0.1,
+      "initial_inventory_low_pct": 0.3,
+      "initial_inventory_high_pct": 0.5,
+      "seed": 42,
+      "symmetrize": true,
+      "csv": "C:\\Users\\onurs\\Desktop\\ma_2026_project\\predictions\\test_predictions_p0.55_s0.95.csv"
+    }
+  },
+  "results": [
+    {
+      "label": "baseline_first_hetero_nv3",
+      "use_heterogeneous_capacity": true,
+      "num_vehicles": 3,
+      "compute_sec": 2010.5,
+      "stockouts": 72,
+      "op_cost": 66840.51,
+      "total_cost": 282840.51,
+      "dispatches": 35,
+      "travel_cost": 1730.79,
+      "dispatch_cost": 10500.0,
+      "drop_fees": 18550.0,
+      "holding_cost": 36059.72,
+      "stockout_cost": 216000.0,
+      "frozen_tt_hash": "76013f9295fe036d980740994878c3be"
+    },
+    {
+      "label": "uniform_nv2",
+      "use_heterogeneous_capacity": false,
+      "num_vehicles": 2,
+      "compute_sec": 616.4,
+      "stockouts": 80,
+      "op_cost": 68989.41,
+      "total_cost": 308989.41,
+      "dispatches": 34,
+      "travel_cost": 1687.6,
+      "dispatch_cost": 10200.0,
+      "drop_fees": 17700.0,
+      "holding_cost": 39401.81,
+      "stockout_cost": 240000.0,
+      "frozen_tt_hash": "76013f9295fe036d980740994878c3be"
+    },
+    {
+      "label": "uniform_nv3",
+      "use_heterogeneous_capacity": false,
+      "num_vehicles": 3,
+      "compute_sec": 1401.0,
+      "stockouts": 70,
+      "op_cost": 68522.85,
+      "total_cost": 278522.85,
+      "dispatches": 34,
+      "travel_cost": 1743.44,
+      "dispatch_cost": 10200.0,
+      "drop_fees": 17850.0,
+      "holding_cost": 38729.41,
+      "stockout_cost": 210000.0,
+      "frozen_tt_hash": "76013f9295fe036d980740994878c3be"
+    },
+    {
+      "label": "hetero_nv2",
+      "use_heterogeneous_capacity": true,
+      "num_vehicles": 2,
+      "compute_sec": 1343.5,
+      "stockouts": 83,
+      "op_cost": 67335.78,
+      "total_cost": 316335.78,
+      "dispatches": 33,
+      "travel_cost": 1825.74,
+      "dispatch_cost": 9900.0,
+      "drop_fees": 18700.0,
+      "holding_cost": 36910.04,
+      "stockout_cost": 249000.0,
+      "frozen_tt_hash": "76013f9295fe036d980740994878c3be"
+    },
+    {
+      "label": "baseline_last_hetero_nv3",
+      "use_heterogeneous_capacity": true,
+      "num_vehicles": 3,
+      "compute_sec": 2011.0,
+      "stockouts": 72,
+      "op_cost": 66840.51,
+      "total_cost": 282840.51,
+      "dispatches": 35,
+      "travel_cost": 1730.79,
+      "dispatch_cost": 10500.0,
+      "drop_fees": 18550.0,
+      "holding_cost": 36059.72,
+      "stockout_cost": 216000.0,
+      "frozen_tt_hash": "76013f9295fe036d980740994878c3be"
+    }
+  ]
+}

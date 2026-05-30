@@ -1,0 +1,91 @@
+{
+  "purpose": "Frozen asymmetric travel-matrix baseline probe; compares asymmetric runs to existing frozen symmetric references.",
+  "symmetric_refs": {
+    "legacy_cplex": {
+      "stockouts": 72,
+      "op_cost": 66840.51,
+      "total_cost": 282840.51,
+      "dispatches": 35,
+      "travel_matrix_hash": "76013f9295fe036d980740994878c3be"
+    },
+    "det_cplex": {
+      "stockouts": 59,
+      "op_cost": 68601.59,
+      "total_cost": 245601.59,
+      "dispatches": 36,
+      "travel_matrix_hash": "76013f9295fe036d980740994878c3be"
+    }
+  },
+  "results": [
+    {
+      "compute_sec": 1437.9,
+      "deterministic": false,
+      "dispatch_cost": 10500.0,
+      "dispatches": 35,
+      "drop_fees": 18150.0,
+      "holding_cost": 36865.52,
+      "mode": "legacy_cplex",
+      "op_cost": 67278.72,
+      "provenance": {
+        "alpha_safety": 0.95,
+        "backend": "OSM",
+        "cplex_version": "22.1.1.0",
+        "days": 30,
+        "docplex_version": "2.32.264",
+        "forecast_csv_hash": "b9432a2eba76b887b49597cc705f0d8e",
+        "forecast_csv_path": "C:\\Users\\onurs\\Desktop\\ma_2026_project\\predictions\\test_predictions_p0.55_s0.95.csv",
+        "horizon": 7,
+        "mip_gap": 0.05,
+        "num_vehicles": 3,
+        "osmnx_version": "2.0.7",
+        "python_version": "3.10.11",
+        "safety_floor_pen": 0.1,
+        "seed": 42,
+        "stockout_penalty": 3000,
+        "symmetrize": false,
+        "travel_matrix_hash": "bdbc52b4269920118507228965a3d4bf",
+        "use_heterogeneous_capacity": true
+      },
+      "stockout_cost": 234000.0,
+      "stockouts": 78,
+      "symmetrize": false,
+      "total_cost": 301278.72,
+      "travel_cost": 1763.2
+    },
+    {
+      "compute_sec": 1488.4,
+      "deterministic": true,
+      "dispatch_cost": 10800.0,
+      "dispatches": 36,
+      "drop_fees": 17950.0,
+      "holding_cost": 36428.7,
+      "mode": "det_cplex",
+      "op_cost": 66943.5,
+      "provenance": {
+        "alpha_safety": 0.95,
+        "backend": "OSM",
+        "cplex_version": "22.1.1.0",
+        "days": 30,
+        "docplex_version": "2.32.264",
+        "forecast_csv_hash": "b9432a2eba76b887b49597cc705f0d8e",
+        "forecast_csv_path": "C:\\Users\\onurs\\Desktop\\ma_2026_project\\predictions\\test_predictions_p0.55_s0.95.csv",
+        "horizon": 7,
+        "mip_gap": 0.05,
+        "num_vehicles": 3,
+        "osmnx_version": "2.0.7",
+        "python_version": "3.10.11",
+        "safety_floor_pen": 0.1,
+        "seed": 42,
+        "stockout_penalty": 3000,
+        "symmetrize": false,
+        "travel_matrix_hash": "bdbc52b4269920118507228965a3d4bf",
+        "use_heterogeneous_capacity": true
+      },
+      "stockout_cost": 216000.0,
+      "stockouts": 72,
+      "symmetrize": false,
+      "total_cost": 282943.5,
+      "travel_cost": 1764.8
+    }
+  ]
+}

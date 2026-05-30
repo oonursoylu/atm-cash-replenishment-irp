@@ -1,0 +1,125 @@
+{
+  "day3_entry": {
+    "hash": "7723e2e27bac4bd8f118bebbdabe4382",
+    "known_hash": "7723e2e27bac4bd8f118bebbdabe4382",
+    "matches_known": true,
+    "frozen_tt_hash": "76013f9295fe036d980740994878c3be",
+    "backend": "OSM",
+    "inventory": {
+      "Z0241002": 70417.67984578834,
+      "Z0241003": 90656.07552226668,
+      "Z0241004": 123552.93183691194,
+      "Z0241005": 61510.53690744113,
+      "Z0241006": 108213.56070820063,
+      "Z0241007": 89464.97437114557,
+      "Z0241008": 109708.97838524227,
+      "Z0276001": 68820.1066103533,
+      "Z0276002": 108833.74557482163,
+      "Z0276003": 55034.860971903516,
+      "Z0386001": 96311.03798428827,
+      "Z0386002": 128048.42304826897,
+      "Z0386003": 81332.87757470907,
+      "Z0386004": 77951.88253433243,
+      "Z0386005": 103454.22188897616,
+      "Z0386006": 86697.07403016085,
+      "Z0386007": 57212.03110203483,
+      "Z0646001": 136166.56838759087,
+      "Z0646002": 156093.0456677827,
+      "Z0646003": 65519.937983903044,
+      "Z0646004": 109580.9625916404,
+      "Z0951001": 129263.93949882267,
+      "Z0951002": 85125.05165179921,
+      "Z1031001": 115058.35998494251,
+      "Z1031002": 158887.04577654248,
+      "Z1119001": 123949.45451126268,
+      "Z1524001": 80759.66747041182,
+      "Z1899001": 98687.3101466771,
+      "Z1899002": 152309.54930779678,
+      "Z2135001": 181222.60313668908,
+      "Z2135002": 215102.82732743802
+    }
+  },
+  "conditions": {
+    "a": {
+      "desc": "frozen matrix + CURRENT (non-det) CPLEX",
+      "identical_cross_process": true,
+      "runs": [
+        {
+          "condition": "a",
+          "deterministic": false,
+          "pid": 4640,
+          "objective": 14029.742401155247,
+          "mip_rel_gap": 0.029434941316462855,
+          "status": "integer optimal, tolerance",
+          "solve_time_sec": 13.59,
+          "frozen_tt_hash": "76013f9295fe036d980740994878c3be",
+          "backend": "OSM",
+          "actions": {
+            "stops": 4,
+            "total_q": 238383.16,
+            "routes": 1,
+            "qhash": "431977f24e4af9c53d72302e1727ecf7"
+          }
+        },
+        {
+          "condition": "a",
+          "deterministic": false,
+          "pid": 7964,
+          "objective": 14029.742401155247,
+          "mip_rel_gap": 0.029434941316462855,
+          "status": "integer optimal, tolerance",
+          "solve_time_sec": 14.63,
+          "frozen_tt_hash": "76013f9295fe036d980740994878c3be",
+          "backend": "OSM",
+          "actions": {
+            "stops": 4,
+            "total_q": 238383.16,
+            "routes": 1,
+            "qhash": "431977f24e4af9c53d72302e1727ecf7"
+          }
+        }
+      ]
+    },
+    "b": {
+      "desc": "frozen matrix + DETERMINISTIC CPLEX",
+      "identical_cross_process": true,
+      "runs": [
+        {
+          "condition": "b",
+          "deterministic": true,
+          "pid": 12388,
+          "objective": 14183.571125759063,
+          "mip_rel_gap": 0.04252764519492852,
+          "status": "integer optimal, tolerance",
+          "solve_time_sec": 20.97,
+          "frozen_tt_hash": "76013f9295fe036d980740994878c3be",
+          "backend": "OSM",
+          "actions": {
+            "stops": 8,
+            "total_q": 617903.66,
+            "routes": 1,
+            "qhash": "42e84a9fa87c8b3f211a1a97fd9bfc95"
+          }
+        },
+        {
+          "condition": "b",
+          "deterministic": true,
+          "pid": 1576,
+          "objective": 14183.571125759063,
+          "mip_rel_gap": 0.04252764519492852,
+          "status": "integer optimal, tolerance",
+          "solve_time_sec": 22.1,
+          "frozen_tt_hash": "76013f9295fe036d980740994878c3be",
+          "backend": "OSM",
+          "actions": {
+            "stops": 8,
+            "total_q": 617903.66,
+            "routes": 1,
+            "qhash": "42e84a9fa87c8b3f211a1a97fd9bfc95"
+          }
+        }
+      ]
+    }
+  },
+  "attribution": "Frozen matrix ALONE makes day-3 cross-process identical; CPLEX-determinism is pure hardening (not required here)."
+}
