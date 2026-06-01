@@ -4,9 +4,9 @@ Date started: 2026-05-30
 
 ## Purpose
 
-This folder will contain the canonical frozen-OSM IRP rerun results used for the final thesis text.
+This folder contains the canonical frozen-OSM IRP rerun results used for the final thesis text.
 
-Older result files in `docs/phase_*.json`, `docs/baseline_results.json`, and `docs/headline_73day_*` were produced before the OSM travel matrix was frozen. They are retained as historical/pre-frozen artifacts, but they should not be used as final thesis evidence unless explicitly copied or regenerated here with frozen provenance.
+Older result files previously kept in root `docs/` were produced before the OSM travel matrix was frozen. They are retained under `docs/archive/pre_frozen_osm/results/` as historical/pre-frozen artifacts, but they should not be used as final thesis evidence unless explicitly regenerated with frozen provenance.
 
 ## Locked Configuration
 
@@ -29,13 +29,13 @@ Canonical reporting setup:
 | 4.2.3 | Cost parameter grid | `phase_4a_cost_grid_frozen_20260530.json` | complete | Frozen grid complete: `3000/0.1` is the cost-disciplined knee (72 SO / 66,840.51 TL); `3000/1.0` is the higher-service alternative (69 SO / 70,062.79 TL). Old inverse-penalty and U-shape claims are weakened/withdrawn. |
 | 4.3.2 / 4.4 | Alpha safety sweep | `phase_4_alpha_safety_sweep_frozen_20260530.json` | complete | Frozen result confirms monotone service-cost trade-off: alpha 0.90 -> 84 SO / 64,577.18 TL op; 0.95 -> 72 SO / 66,840.51 TL op; 0.99 -> 34 SO / 79,617.33 TL op. Alpha 0.95 remains the cost-disciplined policy point; 0.99 is the high-service alternative. |
 | 4.2.4 | Initial inventory sweep | `phase_4i_initial_inventory_frozen_20260530.json` | complete | Frozen result: lows 0.10/0.20/0.30/0.40/0.50 give 79/79/72/73/71 SO and 66,247.06/67,287.43/66,840.51/68,012.25/69,219.36 TL op. Old sharp V-shape is weakened: `0.30` remains the cost-disciplined operating band, while `0.50` is a higher-inventory alternative with only 1 fewer SO and higher holding/op cost. |
-| 4.4.1 | Multi-seed variance | TBD | pending | Must be rerun under frozen symmetric matrix if time allows. |
+| 4.4.1 | Multi-seed variance | `phase_4s_seed_variance_frozen_20260531.json` | complete | Frozen 30-day seed variance at the Proposed calibration cell, gap 0.05, N=7 seeds {1,7,13,21,42,73,99}: mean 74.86 SO, sigma 2.97 SO, sigma op cost 549.53 TL; seed 42 is representative at -0.96 sigma. |
 | 4.5.6 | Baseline comparison | `phase_4_baseline_comparison_frozen_20260531.json` + `phase_4j_proposed_headline_frozen_20260531.json` | complete | Frozen 73-day component-attribution comparison: B0 52 SO / 229,354.51 TL op; B1 25 SO / 215,726.01 TL op; B2 252 SO / 134,386.70 TL op; Proposed 120 SO / 156,718.75 TL op. Service levels should be computed from stockouts over 2,263 ATM-days. |
 | 4.5 | 73-day headline | `phase_4j_proposed_headline_frozen_20260531.json` | complete | Frozen headline: Proposed 120 SO / 94.70% SL / 156,718.75 TL op / 516,718.75 TL reported total over 73 days, gap 0.02, seed 42, legacy CPLEX. |
 
 ## Writing Rule
 
-Final thesis claims should be written from this manifest and the frozen result JSONs, not from the pre-frozen root `docs/phase_*.json` files.
+Final thesis claims should be written from this manifest and the frozen result JSONs, not from the pre-frozen archive files.
 
 ## Forecast Inputs for Alpha Sweep
 

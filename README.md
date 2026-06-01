@@ -19,25 +19,26 @@ setting.
 
 ## Headline Result
 
-The final 73-day rolling-horizon simulation produced:
+The final frozen 73-day rolling-horizon simulation produced:
 
 | Metric | Value |
 |---|---:|
-| Service level | 94.65% |
-| Steady-state service level, days 14-73 | about 97.0% |
-| Stockout events | 121 over 2,263 ATM-days |
-| Operational cost | 156,295 TL |
-| Reported total cost, including stockout penalty | 519,295 TL |
-| Total dispatches | 87 vehicle shifts |
-| Total cash loaded | 95,514,012 TL |
+| Service level | 94.70% |
+| Steady-state service level, days 14-73 | 96.99% |
+| Stockout events | 120 over 2,263 ATM-days |
+| Operational cost | 156,718.75 TL |
+| Reported total cost, including stockout penalty | 516,718.75 TL |
+| Total dispatches | 88 vehicle shifts |
+| Total cash loaded | 97,074,950 TL |
 
 The full-window service level is slightly below the 95% lower bound often
 reported for deployed ATM operations. Most of the gap comes from an early
-catch-up period: days 7-13 create 65 of the 121 stockouts. After day 13, the
+catch-up period: days 7-13 create 64 of the 120 stockouts. After day 13, the
 system reaches about 97.0% service level.
 
-Detailed results are in `docs/headline_73day_run_results.md`. The raw terminal
-output for the final run is kept in `docs/headline_73day_terminal_output.md`.
+Canonical frozen results are indexed in `docs/results_frozen/MANIFEST.md`.
+The pre-frozen 73-day run notes are retained only as historical artifacts under
+`docs/archive/pre_frozen_osm/results/`.
 
 ## What the System Does
 
@@ -197,13 +198,16 @@ This keeps the public repository focused on code, configuration, reproducible
 experiment scripts, and documented results. The full pipeline can be regenerated
 locally when the required data and solver are available.
 
-Selected result files are kept under `docs/`:
+Canonical result files are kept under `docs/results_frozen/`:
 
-- `docs/headline_73day_run_results.md`
-- `docs/headline_73day_terminal_output.md`
-- `docs/baseline_results.json`
-- `docs/point_irp_results.json`
-- `docs/phase_*_raw.json`
+- `docs/results_frozen/MANIFEST.md`
+- `docs/results_frozen/phase_4j_proposed_headline_frozen_20260531.json`
+- `docs/results_frozen/phase_4_baseline_comparison_frozen_20260531.json`
+- `docs/results_frozen/phase_4s_seed_variance_frozen_20260531.json`
+
+Historical pre-frozen IRP outputs and superseded run scripts are archived under
+`docs/archive/pre_frozen_osm/`. They are retained for audit/history, not final
+thesis evidence.
 
 SHAP summary outputs are kept in `outputs/shap/`.
 
@@ -220,9 +224,11 @@ ma_2026_project/
 |   |-- optim/                      # MILP model and CPLEX solve logic
 |   |-- sim/                        # Rolling-horizon simulation
 |   `-- viz/                        # Map generation
-|-- scripts/                        # Experiment and ablation scripts
+|-- scripts/                        # Current frozen runs and active helper scripts
 |-- tests/                          # Data-layer and integration checks
-|-- docs/                           # Public result summaries and raw grids
+|-- docs/results_frozen/            # Canonical frozen IRP outputs
+|-- docs/reproducibility/           # Frozen-matrix audit/probe evidence
+|-- docs/archive/pre_frozen_osm/    # Historical pre-frozen IRP artifacts
 |-- models/                         # Trained artifacts, not tracked
 |-- predictions/                    # Prediction CSVs, not tracked
 `-- outputs/                        # Generated outputs, mostly not tracked
