@@ -67,6 +67,17 @@ docs/phase_4j_v3_results.md
 docs/phase_alpha_safety_robustness_results.md
 configs/optimize.yaml.bak_*
 
+# Local rerun scratch files and console logs
+scripts/_tmp_*.py
+docs/*.log
+docs/results_frozen/*.log
+docs/acceptance_test_*.json
+docs/day3_entry_state_*.json
+docs/frozen_*_probe_*.json
+docs/fullchain_repro_probe_*.json
+docs/phase_4h_rerun_*.json
+predictions/backup_*/
+
 # OS
 .DS_Store
 Thumbs.db
