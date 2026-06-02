@@ -32,6 +32,7 @@ Canonical reporting setup:
 | 4.4.1 | Multi-seed variance | `phase_4s_seed_variance_frozen_20260531.json` | complete | Frozen 30-day seed variance at the Proposed calibration cell, gap 0.05, N=7 seeds {1,7,13,21,42,73,99}: mean 74.86 SO, sigma 2.97 SO, sigma op cost 549.53 TL; seed 42 is representative at -0.96 sigma. |
 | 4.5.6 | Baseline comparison | `phase_4_baseline_comparison_frozen_20260531.json` + `phase_4j_proposed_headline_frozen_20260531.json` | complete | Frozen 73-day component-attribution comparison: B0 52 SO / 229,354.51 TL op; B1 25 SO / 215,726.01 TL op; B2 252 SO / 134,386.70 TL op; Proposed 120 SO / 156,718.75 TL op. Service levels should be computed from stockouts over 2,263 ATM-days. |
 | 4.5 | 73-day headline | `phase_4j_proposed_headline_frozen_20260531.json` | complete | Frozen headline: Proposed 120 SO / 94.70% SL / 156,718.75 TL op / 516,718.75 TL reported total over 73 days, gap 0.02, seed 42, legacy CPLEX. |
+| Appendix / 4.4 | High-service alpha 0.99 variant | `phase_4j_high_service_alpha099_frozen_20260601.json` | complete | Frozen 73-day appendix variant, not the headline: alpha_safety 0.99 gives 51 SO / 97.75% SL / 187,355.41 TL op / 340,355.41 TL reported total, gap 0.02, seed 42. Compared with the alpha 0.95 headline, it avoids 69 SO at +30,636.66 TL op cost; the increment is more than fully accounted for by holding (+31,239.64 TL), partly offset by small net reductions in dispatch/drop costs and a small travel increase. |
 
 ## Writing Rule
 
