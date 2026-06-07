@@ -6,8 +6,9 @@
 [![XGBoost](https://img.shields.io/badge/forecast-XGBoost%202.0+-orange.svg)](https://xgboost.readthedocs.io/)
 ![Status: Master's Thesis](https://img.shields.io/badge/status-master's%20thesis-purple.svg)
 
-This repository contains the implementation for a master's thesis on ATM cash
-replenishment. The project builds a **predict-then-optimize** pipeline: an
+This repository contains the implementation for the master's thesis
+*Predict-then-Optimize ATM Cash Replenishment: A Dual-Quantile Forecast and a
+Soft Safety Floor for Multi-Vehicle Inventory Routing*. The project builds a **predict-then-optimize** pipeline: an
 XGBoost quantile forecaster predicts ATM cash demand, and a mixed-integer
 inventory routing model turns those forecasts into daily replenishment plans.
 The forecast layer is also checked with SHAP-based explainability to inspect
@@ -17,6 +18,18 @@ The main goal is not only to reduce stockouts. The project studies the trade-off
 between **service quality** and **operational cost** in a realistic cash-in-transit
 setting.
 
+## Contributions
+
+- A soft, priced safety floor. The gap between the safety and point quantiles
+  becomes a per-ATM, per-day cash buffer that the optimizer is pushed toward but
+  may fall short of at a price, instead of a hard no-stockout constraint.
+- Evidence that the two quantiles are non-redundant. A SHAP analysis shows the
+  point and safety models rely on different features, so forwarding both to the
+  optimizer carries information a single forecast would discard.
+- A frozen, reproducible evaluation. Small result differences are read against
+  the optimizer's within-gap sensitivity, so configuration choices are reported
+  as trade-off points rather than over-claimed optima.
+
 ## Headline Result
 
 The final frozen 73-day rolling-horizon simulation produced:
@@ -24,7 +37,7 @@ The final frozen 73-day rolling-horizon simulation produced:
 | Metric | Value |
 |---|---:|
 | Service level | 94.70% |
-| Steady-state service level, days 14-73 | 96.99% |
+| Steady-state service level, days 14-73 | 97.0% |
 | Stockout events | 120 over 2,263 ATM-days |
 | Operational cost | 156,718.75 TL |
 | Reported total cost, including stockout penalty | 516,718.75 TL |
@@ -32,9 +45,15 @@ The final frozen 73-day rolling-horizon simulation produced:
 | Total cash loaded | 97,074,950 TL |
 
 The full-window service level is slightly below the 95% lower bound often
-reported for deployed ATM operations. Most of the gap comes from an early
-catch-up period: days 7-13 create 64 of the 120 stockouts. After day 13, the
-system reaches about 97.0% service level.
+reported for deployed ATM operations. Almost all of that gap comes from a single
+week: the pre-holiday surge before Eid al-Adha (days 7-13) produces 64 of the 120
+stockouts, when aggregate daily demand reaches roughly eight times its early-month
+level. After day 13 the system settles at about 97.0% service level.
+
+The safety quantile is a tunable service-cost knob. At `alpha_safety = 0.99`, the
+same 73-day run reaches a 97.75% full-window service level at a higher operating
+cost of 187,355.41 TL, tracing the high-service end of the trade-off. The
+headline uses 0.95 as the cost-disciplined point.
 
 Canonical frozen results are indexed in `docs/results_frozen/MANIFEST.md`.
 The pre-frozen 73-day run notes are retained only as historical artifacts under
@@ -42,7 +61,7 @@ The pre-frozen 73-day run notes are retained only as historical artifacts under
 
 ## What the System Does
 
-The pipeline has three layers.
+The pipeline has three core layers, plus an explainability check.
 
 | Layer | Method | Output |
 |---|---|---|
@@ -75,9 +94,10 @@ The evaluated instance has:
 - heterogeneous ATM capacity tiers: 250,000 / 400,000 / 500,000 TL
 - vehicle capacity: 1,500,000 TL
 
-The final test window covers 8 December 2007 to 25 February 2008. The forecast is
-trained once and held fixed during the simulation, which is a deliberate thesis
-scope decision rather than a production assumption.
+The 73 evaluated days run from 8 December 2007 to 18 February 2008. The daily
+forecasts extend seven days further, to 25 February 2008, to feed the rolling
+horizon. The forecast is trained once and held fixed during the simulation, which
+is a deliberate thesis scope decision rather than a production assumption.
 
 ## Method Summary
 
@@ -136,16 +156,23 @@ time.
 
 | System | Forecast input | Routing / policy | Stockouts | Service level | Operational cost |
 |---|---|---|---:|---:|---:|
-| B0 static `(s,S)` | historical mean | greedy routing | 52 | 97.70% | 229,355 TL |
-| B1 quantile + greedy | `d_mean + d_safety` | threshold + greedy routing | 25 | 98.90% | 215,726 TL |
-| B2 point + IRP | `d_mean` only | IRP MILP | 262 | 88.42% | 136,101 TL |
-| Proposed system | `d_mean + d_safety` | IRP MILP | 121 | 94.65% | 156,295 TL |
+| B0 static `(s,S)` | historical mean | greedy routing | 52 | 97.70% | 229,354.51 TL |
+| B1 quantile + greedy | `d_mean + d_safety` | threshold + greedy routing | 25 | 98.90% | 215,726.01 TL |
+| B2 point + IRP | `d_mean` only | IRP MILP | 252 | 88.86% | 134,386.70 TL |
+| Proposed system | `d_mean + d_safety` | IRP MILP | 120 | 94.70% | 156,718.75 TL |
 
 The proposed system is not the highest-service policy. The greedy quantile
 baseline has fewer stockouts, but it also carries much higher operating cost.
 The proposed system is the cost-disciplined IRP policy with probabilistic
 forecast protection. This is why the result is read as a trade-off, not as a
 single ranking.
+
+Read by component, the table shows where the value comes from. Adding the safety
+quantile to the IRP (B2 to the proposed system) avoids 132 stockouts, from 252
+down to 120, at about 169 TL of extra operational cost each, far below the
+modelling stockout penalty. Among B1, B2, and the proposed system none dominates
+the others; only the static baseline B0 is dominated, because B1 beats it on both
+stockouts and cost.
 
 ## How to Run
 
