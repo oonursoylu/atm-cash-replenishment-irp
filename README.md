@@ -44,7 +44,7 @@ The final frozen 73-day rolling-horizon simulation produced:
 | Total dispatches | 88 vehicle shifts |
 | Total cash loaded | 97,074,950 TL |
 
-The full-window service level is slightly below the 95% lower bound of the cycle service level band commonly
+The full-window service level is slightly below the 95% lower bound of the service-level band commonly
 targeted in inventory and operations management. Almost all of that gap comes from a single
 week: the pre-holiday surge before Eid al-Adha (days 7-13) produces 64 of the 120
 stockouts, when aggregate daily demand reaches roughly eight times its early-month
