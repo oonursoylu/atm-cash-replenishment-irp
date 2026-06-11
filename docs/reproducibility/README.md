@@ -17,7 +17,7 @@ Main reporting configuration:
 - Travel matrix hash: `76013f9295fe036d980740994878c3be`
 - Asymmetric ablation hash: `bdbc52b4269920118507228965a3d4bf`
 - Forecast CSV hash: `b9432a2eba76b887b49597cc705f0d8e`
-- CPLEX mode: legacy/default, documented as reproducible on the 8-core environment
+- CPLEX mode: legacy/default, documented as reproducible on the 8-logical-processor environment
 - Calibration gap: 0.05
 - Headline gap: 0.02
 - Seed: 42
