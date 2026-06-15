@@ -14,9 +14,9 @@ inventory routing model turns those forecasts into daily replenishment plans.
 The forecast layer is also checked with SHAP-based explainability to inspect
 which features drive the point and safety quantile models.
 
-The main goal is not only to reduce stockouts. The project studies the trade-off
-between **service quality** and **operational cost** in a realistic cash-in-transit
-setting.
+Reducing stockouts is only part of the goal. The project studies the trade-off
+between service quality and operational cost in a real cash-in-transit setting,
+where both idle cash and each armored-vehicle trip are costly.
 
 ## Contributions
 
@@ -138,7 +138,7 @@ The thesis evaluates systems on two separate axes:
 - operational cost: travel, dispatch, drop fees, and holding cost
 - stockout count: number of ATM-days where demand exceeds available cash
 
-These are kept separate because the stockout penalty is a modelling parameter,
+These are kept separate because the stockout penalty is a modeling parameter,
 not a directly measured cash-in-transit cost.
 
 ### Explainability
@@ -170,7 +170,7 @@ single ranking.
 Read by component, the table shows where the value comes from. Adding the safety
 quantile to the IRP (B2 to the proposed system) avoids 132 stockouts, from 252
 down to 120, at about 169 TL of extra operational cost each, far below the
-modelling stockout penalty. Among B1, B2, and the proposed system none dominates
+modeling stockout penalty. Among B1, B2, and the proposed system none dominates
 the others; only the static baseline B0 is dominated, because B1 beats it on both
 stockouts and cost.
 
@@ -276,7 +276,7 @@ Important limitations:
 
 These choices keep the thesis computationally tractable. They also point to
 clear future work: periodic retraining, joint forecast-IRP calibration,
-magnitude-aware stockout modelling, per-ATM interpretability, and cross-instance
+magnitude-aware stockout modeling, per-ATM interpretability, and cross-instance
 testing.
 
 ## Research Transparency
@@ -287,7 +287,7 @@ result interpretation, and thesis responsibility remain with the author.
 
 ## Key References
 
-- Bertsimas and Kallus (2020), Sadana et al. (2024): contextual optimization and predict-then-optimize
+- Bertsimas and Kallus (2020), Sadana et al. (2025): contextual optimization and predict-then-optimize
 - Arrow et al. (1951), Trapero et al. (2019): critical-fractile logic and quantile-based inventory forecasting
 - Bertazzi and Speranza (2013), Coelho et al. (2014): inventory routing formulation and survey literature
 - Simutis et al. (2008), Venkatesh et al. (2014), Ekinci et al. (2015): ATM cash-demand forecasting and replenishment context
