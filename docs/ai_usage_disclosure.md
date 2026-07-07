@@ -1,9 +1,11 @@
 # AI Tool Usage Disclosure
 
-**Project:** Predict-then-Optimize ATM Cash Replenishment (Master's Thesis) 
-**Author:** Onur Soylu  
-**Institution:** Otto von Guericke University Magdeburg  
-**Date:** 07 July 2026
+| Field | Details |
+| --- | --- |
+| Project | Predict-then-Optimize ATM Cash Replenishment (Master's Thesis) |
+| Author | Onur Soylu |
+| Institution | Otto von Guericke University Magdeburg |
+| Date | 07 July 2026 |
 
 ---
 
