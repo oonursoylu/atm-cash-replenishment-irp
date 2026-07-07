@@ -7,7 +7,7 @@
 ![Status: Master's Thesis](https://img.shields.io/badge/status-master's%20thesis-purple.svg)
 
 This repository contains the implementation for the master's thesis
-*Predict-then-Optimize ATM Cash Replenishment: A Dual-Quantile Forecast and a
+*Predict-then-Optimize ATM Cash Replenishment: Dual-Quantile Forecasting and a
 Soft Safety Floor for Multi-Vehicle Inventory Routing*. The project builds a **predict-then-optimize** pipeline: an
 XGBoost quantile forecaster predicts ATM cash demand, and a mixed-integer
 inventory routing model turns those forecasts into daily replenishment plans.
@@ -93,6 +93,13 @@ The evaluated instance has:
 - 73-day test window
 - heterogeneous ATM capacity tiers: 250,000 / 400,000 / 500,000 TL
 - vehicle capacity: 1,500,000 TL
+
+The demand series are real: the operator's records provide 31 individual
+ATM-level daily withdrawal series (10 branch codes, 2006-2008). The records
+carry no machine coordinates, so the spatial layout is representative and
+travel times come from OpenStreetMap, frozen for reproducibility. Absolute
+travel and dispatch figures are therefore illustrative; the demand series and
+the same-instance comparisons carry the results.
 
 The 73 evaluated days run from 8 December 2007 to 18 February 2008. The daily
 forecasts extend seven days further, to 25 February 2008, to feed the rolling
