@@ -1,9 +1,9 @@
 # AI Tool Usage Disclosure
 
-**Project:** ATM Cash Replenishment via Inventory Routing (Master's Thesis)  
+**Project:** Predict-then-Optimize ATM Cash Replenishment (Master's Thesis) 
 **Author:** Onur Soylu  
 **Institution:** Otto von Guericke University Magdeburg  
-**Date:** 22 May 2026
+**Date:** 07 July 2026
 
 ---
 
@@ -39,6 +39,7 @@ AI assistance was used mainly for:
 - improving code structure and documentation clarity;
 - debugging and checking code changes;
 - drafting or polishing intermediate explanatory text;
+- language editing and revision of thesis draft text;
 - discussing possible interpretations of experimental results;
 - suggesting references or concepts for the author to verify independently.
 
@@ -83,5 +84,5 @@ academic responsibility belong to the author.
 
 *Signed:*  
 Onur Soylu  
-22 May 2026  
+07 July 2026  
 Otto von Guericke University Magdeburg
