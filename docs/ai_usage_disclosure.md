@@ -25,8 +25,8 @@ The following general-purpose AI assistants were used at different points during
 the project:
 
 - Claude (Anthropic)
-- OpenAI ChatGPT
-- Google Gemini
+- OpenAI ChatGPT and Codex
+- Google Gemini and NotebookLM
 
 These tools were accessed through standard chat or coding-assistant interfaces.
 No custom AI model was trained or deployed as part of this thesis work.
